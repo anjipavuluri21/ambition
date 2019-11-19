@@ -43,7 +43,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="<?php echo base_url();?>course/courseDetails" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Course Details
@@ -142,9 +142,7 @@
                   <p>Renewal history</p>
                 </a>
               </li>
-              
-            
-             
+                
             </ul>
               
           
