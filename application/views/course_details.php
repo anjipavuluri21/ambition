@@ -31,7 +31,8 @@
           <h3 class="card-title">Course</h3>
 
           <div class="card-tools">
-              <button>Add Course</button>
+              
+              <a class="btn btn-primary float-right btn-sm" href=""><i class="fa fa-plus" style="font-size:14px;"></i>&nbsp;Add</a>
               
           </div>
         </div>
@@ -96,5 +97,5 @@
 <!-- AdminLTE App -->
 <script src="<?php echo base_url('assets/dist/js/adminlte.min.js');?>"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="<?php echo base_url('dist/js/demo.js');?>"></script>
+<script src="<?php echo base_url('assets/dist/js/demo.js');?>"></script>
 </body>
