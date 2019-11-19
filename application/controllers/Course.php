@@ -12,4 +12,7 @@ class Course extends CI_Controller {
         public function  courseDetails(){
                 $this->load->view('course_details');
         }
+        public function addCourse(){
+            $this->load->view('add_course');
+        }
 }
