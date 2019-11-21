@@ -70,8 +70,19 @@
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>RAJYA SEA</td>
-                                                <td>$200</td>
+                                                <td>MPSC</td>
+                                                <td>Rs. 2000 / -</td>
+
+                                                <td text-align="center">
+                                                    <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
+                                                    <a href="#" title="View"><i class="fa fa-eye"></i> </a>&nbsp;
+                                                    <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>MTS/NTS</td>
+                                                <td>Rs. 3000 / -</td>
 
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;

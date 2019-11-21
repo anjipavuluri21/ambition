@@ -72,7 +72,18 @@
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Rajyasabha
+                                                <td>Rajyaseva
+                                                </td>
+                                                <td>MPSC</td>
+                                                <td text-align="center">
+                                                    <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
+                                                    <a href="#" title="View"><i class="fa fa-eye"></i> </a>&nbsp;
+                                                    <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>PSI STI ASST
                                                 </td>
                                                 <td>MPSC</td>
                                                 <td text-align="center">
