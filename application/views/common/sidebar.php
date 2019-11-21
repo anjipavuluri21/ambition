@@ -113,6 +113,16 @@
               </p>
             </a>
           </li>
+          <li class="nav-item has-treeview">
+            <a href="<?php echo base_url().'Subject_papers'?>" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Subject Papers
+                <!--<i class="fas fa-angle-left right"></i>-->
+               
+              </p>
+            </a>
+          </li>
           
               <li class="nav-item">
                 <a href="#" class="nav-link">
