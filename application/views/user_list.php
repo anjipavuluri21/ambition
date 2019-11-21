@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>AdminLTE 3 | DataTables</title>
+        <title>Ambition </title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -50,8 +50,6 @@
                 <section class="content">
                     <div class="row">
                         <div class="col-12">
-
-
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">Users</h3>
