@@ -93,7 +93,7 @@
              
             </ul>-->
 
-<li class="nav-item has-treeview">
+        <li class="nav-item has-treeview">
             <a href="<?php echo base_url().'Subject'?>" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -103,6 +103,17 @@
               </p>
             </a>
           </li>
+          <li class="nav-item has-treeview">
+            <a href="<?php echo base_url().'Subject_category'?>" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Subject Category
+                <!--<i class="fas fa-angle-left right"></i>-->
+               
+              </p>
+            </a>
+          </li>
+          
               <li class="nav-item">
                 <a href="#" class="nav-link">
                     <i class="fas fa-upload nav-icon"></i>
