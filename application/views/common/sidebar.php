@@ -175,13 +175,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                  <a href="<?php echo base_url();?>payment/purchase" class="nav-link">
                   <i class="fa fa-shopping-cart  nav-icon"></i>
                   <p>Purchase History</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                  <a href="<?php echo base_url();?>payment/renewal" class="nav-link">
                   <!--<i class="far fa-circle nav-icon"></i>-->
                   <i class="fas fa-sync nav-icon"></i>
                   <p>Renewal history</p>
@@ -189,7 +189,6 @@
               </li>
                 
             </ul>
-              
           
           </li>
           
