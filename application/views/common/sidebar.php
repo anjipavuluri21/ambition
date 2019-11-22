@@ -15,7 +15,8 @@
           <img src="#" class="img-circle elevation-2">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Admin</a>
+          <a href="#" class="d-block"><?php print_r($this->session->userdata['user_data']['user_name']);  ?>
+</a>
         </div>
       </div>
 

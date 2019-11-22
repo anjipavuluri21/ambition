@@ -8,7 +8,7 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" title="logout">
+          <a class="nav-link" href="<?php echo base_url().'user/logout';?>" title="logout">
           <i class="fas fa-power-off"></i>
         </a>
       </li>
