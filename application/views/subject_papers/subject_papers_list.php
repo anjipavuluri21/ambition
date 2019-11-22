@@ -1,3 +1,4 @@
+<?php $this->load->view('common/header'); ?>
 <!DOCTYPE html>
 <html>
     <head>

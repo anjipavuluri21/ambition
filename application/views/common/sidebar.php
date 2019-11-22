@@ -125,7 +125,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="<?php echo base_url().'Subject_papers'?>" class="nav-link">
+            <a href="<?php echo base_url().'Main_subjects'?>" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Main Subjects
@@ -135,7 +135,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="<?php echo base_url().'Subject_papers'?>" class="nav-link">
+            <a href="<?php echo base_url().'Chapters'?>" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Chapters

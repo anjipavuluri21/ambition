@@ -58,7 +58,7 @@
 
 
                                 <button class="btn btn-primary" type="submit"><a href="#" style="color:white;">Save</a></button>
-                                <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url();?>Subject_category">Cancel</button>
+                                <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url();?>Subject_category" style="color:white;">Cancel</button>
                             </div>
                         </form>
 

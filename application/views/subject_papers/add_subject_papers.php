@@ -58,7 +58,7 @@
 
 
                                 <button class="btn btn-primary" type="submit"><a href="#" style="color:white;">Save</a></button>
-                                <button class="btn btn-primary" type="reset" >Cancel</button>
+                                <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url();?>subject_papers" style="color:white;">Cancel</a></button>
                             </div>
                         </form>
 
