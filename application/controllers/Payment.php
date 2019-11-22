@@ -10,7 +10,7 @@ class Payment extends CI_Controller {
     
     public function purchase(){
         $content=[
-            'page_title'=>"Purchase_history",
+            'page_title'=>"Purchase History",
         ];
         $this->load->view('payment/purchase_history',$content);
     }

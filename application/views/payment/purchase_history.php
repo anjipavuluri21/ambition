@@ -64,11 +64,12 @@
                                             <tr>
                                                 <th>Sr.No</th>
                                                 <th>User Name</th>
-                                                <th>Subject Name</th>
-                                                <th>Date</th>
+                                                <th>Course Name</th>
+                                                <th>Purchased Date</th>
+                                                <th>Expiry Date</th>
                                                 <th>Address</th>
                                                 <th>Amount</th>
-                                                <th>Action</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -77,25 +78,21 @@
                                                 <td>Anji</td>
                                                 <td>MPSC</td>
                                                 <td>22-11-2019</td>
+                                                <td>23-11-2019</td>
                                                 <td>hyderabad</td>
                                                 <td>500 /-</td>
-                                                <td text-align="center">
-                                                    <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
-                                                    <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
-                                                </td>
+
                                             </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td>Vamsi</td>
                                                 <td>RAJYASEVA</td>
                                                 <td>25-11-2019</td>
+                                                <td>26-11-2019</td>
                                                 <td>Moosapet</td>
                                                 <td>1000 /-</td>
 
-                                                <td text-align="center">
-                                                    <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
-                                                    <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
-                                                </td>
+
                                             </tr>
 
 
@@ -136,17 +133,17 @@
         <script src="<?php echo base_url("assets"); ?>/dist/js/demo.js"></script>
         <!-- page script -->
         <script>
-    $(function () {
-        $("#example1").DataTable();
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-        });
-    });
+                                        $(function () {
+                                            $("#example1").DataTable();
+                                            $('#example2').DataTable({
+                                                "paging": true,
+                                                "lengthChange": false,
+                                                "searching": false,
+                                                "ordering": true,
+                                                "info": true,
+                                                "autoWidth": false,
+                                            });
+                                        });
         </script>
     </body>
 </html>

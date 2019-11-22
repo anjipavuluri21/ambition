@@ -65,18 +65,16 @@
                                         <thead>
                                             <tr>
                                                 <th>Sr.No</th>
-                                                <th>Subject Name</th>
-                                                                                                        
                                                 <th>Chapter Name</th>
+                                                <th>Main Subject Name</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>P1
-                                                </td>
-                                                <td>Poorv</td>
+                                                <td>ENGLISH</td>
+                                                <td>Rajya Seva</td>
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
                                                     
@@ -85,13 +83,12 @@
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td>P2
-                                                </td>
-                                                <td>Poorv</td>
+                                                <td>Marathi</td>
+                                                <td>Rajya Seva</td>
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
                                                     
-                                                    <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
+                                                    <a shref="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
                                                 </td>
                                             </tr>
 

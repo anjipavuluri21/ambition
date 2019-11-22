@@ -72,7 +72,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>P1</td>
+                                                <td>MTS/NTS</td>
 
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
@@ -81,8 +81,7 @@
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td>P2</td>
-
+                                                <td>MPSC</td>
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
                                                     <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;

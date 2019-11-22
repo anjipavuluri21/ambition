@@ -6,7 +6,7 @@ class Main_subjects extends CI_Controller {
 
     public function index() {
         $content = [
-            'page_title' => "Main_subjects",
+            'page_title' => "Main Subjects",
         ];
         $this->load->view('main_subjects/main_subjects_list', $content);
     }
