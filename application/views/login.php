@@ -71,7 +71,6 @@
                             <span class="txt1">
                                 Don’t have an account?
                             </span>
-
                             <a class="txt2" href="#">
                                 Sign Up
                             </a>

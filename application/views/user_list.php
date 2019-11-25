@@ -69,18 +69,14 @@
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Anji
-                                                </td>
+                                                <td>Anji</td>
                                                 <td>SuperAdmin</td>
                                                 <td>123456</td>
                                                 <td text-align="center">
-                                                    <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
-                                                    <a href="#" title="View"><i class="fa fa-eye"></i> </a>&nbsp;
-                                                    <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
+                                                    <button type="button"  data-toggle="modal" data-target="#myModal">View</button>
+
                                                 </td>
                                             </tr>
-
-
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
@@ -93,8 +89,36 @@
                 </section>
                 <!-- /.content -->
             </div>
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"></button>
+
+                        </div>
+                        <div class="modal-body">
+
+                            <p><b>First Name:</b> anji</p>
+                            <p><b>Last Name:</b> pavuluri</p>
+                            <p><b>Email:</b> anji@gmail.com</p>
+                            <p><b>Mobile Number:</b> 9876543210</p>
+                            <p><b>Password:</b> 123456</p>
+                            <p><b>State:</b> maharashtra</p>
+                            <p><b>District:</b> Akola</p>
+                            <p><b>Pin Code:</b> 444001</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" classs="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
             <!-- /.content-wrapper -->
-                       <?php include('common/footer.php') ?>
+            <?php include('common/footer.php') ?>
 
 
             <!-- Control Sidebar -->

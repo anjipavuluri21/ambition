@@ -44,10 +44,18 @@
                 </div><br>
                 <div class="row">
                   <div class="col-md-6">
+                    <label for="exampleInputEmail1">Course Price</label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" name="course_price" placeholder="price">
+                  </div>
+                </div><br>
+                <div class="row">
+                  <div class="col-md-6">
                     <label for="exampleInputEmail1">Course Duration</label>
                   </div>
                   <div class="col-md-6">
-                    <input type="text" class="form-control" name="course_duration" placeholder="Email">
+                    <input type="text" class="form-control" name="course_duration" placeholder="Duration">
                   </div>
                 </div><br>
                 <div class="row">

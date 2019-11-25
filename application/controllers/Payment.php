@@ -19,7 +19,7 @@ class Payment extends CI_Controller {
          $content=[
             'page_title'=>"Renewal History",
         ];
-               $this->load->view('payment/resnewal_history',$content);
+               $this->load->view('payment/renewal_history',$content);
  
     }
 }

@@ -19,10 +19,8 @@ class User extends CI_Controller {
     public function login() {
         $email = trim($this->input->post('email'));
         $password = trim($this->input->post('password'));
-
         // load model
         $this->load->model('User_model');
-
         // load model method
 //        print_r($query);exit;
 
@@ -33,18 +31,19 @@ class User extends CI_Controller {
             $errorMsg=validation_errors();
                 $this->session->set_flashdata('msg', $errorMsg);
 
-            $this->load->view('login');
+                $this->load->view('login');
         } else {
             $usercheck = $this->User_model->loginCheck($email, $password);
 //            print_r($usercheck);exit;
             if ($usercheck != false) {
-
                 $user = [
                     'user_id' => $usercheck[0]['user_id'],
                     'user_name' => $usercheck[0]['name'],
                     'user_email' => $usercheck[0]['email'],
                     'user_type' => $usercheck[0]['user_type'],
                 ];
+//                print_r($usercheck['user_type']);
+//                exit;
                 // load sessions
                 $this->session->set_userdata('user_data', $user);
                 redirect('dashboard');
@@ -61,5 +60,8 @@ class User extends CI_Controller {
         $this->session->unset_userdata('user_data');
         redirect(base_url());
 
+    }
+    public function userDetails (){
+        $this->load->view('user_details');
     }
 }

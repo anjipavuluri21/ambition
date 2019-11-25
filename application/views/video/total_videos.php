@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ambition | Course Details</title>
+        <title>Ambition | Purchase</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,11 +21,11 @@
     <body class="hold-transition sidebar-mini">
         <div class="wrapper">
             <!-- Navbar -->
-            <?php include('common/navbar.php') ?>
+            <?php $this->load->view('common/navbar'); ?>
             <!-- /.navbar -->
 
             <!-- Main Sidebar Container -->
-            <?php include('common/sidebar.php'); ?>
+            <?php $this->load->view('common/sidebar'); ?>
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
@@ -34,12 +34,12 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Course Details</h1>
+                                <h1><?php echo $page_title; ?></h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active">Course</li>
+                                    <li class="breadcrumb-item active"><?php echo $page_title; ?></li>
                                 </ol>
                             </div>
                         </div>
@@ -50,49 +50,39 @@
                 <section class="content">
                     <div class="row">
                         <div class="col-12">
+
+
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Course</h3>
-
+                                    <h3 class="card-title"><?php echo $page_title; ?></h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <a class="btn btn-primary float-right btn-sm" href="<?php echo base_url();?>course/addCourse"><i class="fa fa-plus" style="font-size:14px;"></i>&nbsp;Add</a>
+                                    <a class="btn btn-primary float-right btn-sm" href="<?php echo base_url();?>video/add_videos"><i class="fa fa-plus" style="font-size:14px;"></i>&nbsp;Add</a>
+
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Sr.No</th>
-                                                <th>Course Name</th>
-                                                <th>Course Price</th>
-                                                <th>Course Duration</th>
-                                                <th>Corse Image</th>
-                                                <th>Action</th>
+                                                <td>S.No</td>
+                                                <td>Course Name</td>
+                                                <td>Subject Name</td>
+                                                <td>Subject Category</td>
+                                                <td>Main Subjects</td>
+                                                <td>Chapter name</td>
+                                                <td>Total Videos</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
                                                 <td>MPSC</td>
-                                                <td>Rs. 2000 / -</td>
-                                                <td>12 Months</td>
-                                                <td></td>
-                                                <td text-align="center">
-                                                    <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
-                                                  
-                                                    <a href="#" title="hide"><i class="fa fa-trash"></i> </a>&nbsp;
-                                                </td>
+                                                <td>Rajya Seva</td>
+                                                <td>Poorv</td>
+                                                <td>P1</td>
+                                                <td>Marathi</td>
+                                                <td>10</td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>MTS/NTS</td>
-                                                <td>Rs. 3000 / -</td>
-                                               <td>12 Months</td>
-                                               <td></td>
-                                                <td text-align="center">
-                                                    <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
-                                                    <a href="#" title="hide"><i class="fa fa-trash"></i> </a>&nbsp;
-                                                </td>
-                                            </tr>
+
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
@@ -106,7 +96,7 @@
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
-            <?php include('common/footer.php') ?>
+            <?php $this->load->view('common/footer'); ?>
 
 
             <!-- Control Sidebar -->

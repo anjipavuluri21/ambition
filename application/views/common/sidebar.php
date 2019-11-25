@@ -1,3 +1,7 @@
+ <?php 
+//            print_r($this->session->userdata['user_data']['user_type']);
+//            exit;
+            ?>
 <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
@@ -15,11 +19,12 @@
           <img src="#" class="img-circle elevation-2">
         </div>
         <div class="info">
+           
           <a href="#" class="d-block"><?php print_r($this->session->userdata['user_data']['user_name']);  ?>
 </a>
         </div>
       </div>
-
+      
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -43,7 +48,6 @@
               </p>
             </a>
           </li>
-          
              <li class="nav-item has-treeview">
             <a href="<?php echo base_url();?>course/courseDetails" class="nav-link">
               <i class="nav-icon fas fa-bookmark"></i>
@@ -66,12 +70,12 @@
                   <i class="fas fa-book nav-icon"></i>
                   <p>MTS/NTS</p>
                 </a>
-              </li>
+              </li>s
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="fas fa-book nav-icon"></i>
                   <p>CLASS 3</p>
-                </a>
+                </a>s
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
@@ -146,16 +150,16 @@
           </li>
           
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<?php echo base_url();?>video/all_videos" class="nav-link">
                     <i class="fas fa-upload nav-icon"></i>
-                  <p>Officer Videos Uploading</p>
+                  <p>Course Videos Uploading</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fa fa-question nav-icon"> </i>
+                <a href="<?php echo base_url();?>video/officers_video_uploading" class="nav-link">
+                 <i class="fas fa-upload nav-icon"></i>
                   
-                  <p>Exams</p>
+                  <p>Officers Videos Uploading</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -165,11 +169,12 @@
                   <p>Practice Papers</p>
                 </a>
               </li>
+              <?php if($this->session->userdata['user_data']['user_type']==1){ ?> 
               <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-credit-card"></i>
               <p>
-                Payment Histroy
+             Payment Histroy
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -191,7 +196,7 @@
             </ul>
           
           </li>
-          
+          <?php } ?>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
