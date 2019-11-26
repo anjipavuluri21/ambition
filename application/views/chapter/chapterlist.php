@@ -1,14 +1,15 @@
+<?php $this->load->view('common/header'); ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ambition | Course Details</title>
+        <title>Ambition</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="<?php echo base_url("assets"); ?>/plugins/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href=s"<?php echo base_url("assets"); ?>/plugins/fontawesome-free/css/all.min.css">
         <!-- Ionicons -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <!-- DataTables -->
@@ -21,11 +22,11 @@
     <body class="hold-transition sidebar-mini">
         <div class="wrapper">
             <!-- Navbar -->
-            <?php include('common/navbar.php') ?>
+            <?php $this->load->view('common/navbar'); ?>
             <!-- /.navbar -->
 
             <!-- Main Sidebar Container -->
-            <?php include('common/sidebar.php'); ?>
+            <?php $this->load->view('common/sidebar'); ?>
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
@@ -34,12 +35,12 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Course Details</h1>
+                                <h1><?php echo $page_title; ?></h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active">Course</li>
+                                    <li class="breadcrumb-item active"><?php echo $page_title; ?></li>
                                 </ol>
                             </div>
                         </div>
@@ -50,49 +51,51 @@
                 <section class="content">
                     <div class="row">
                         <div class="col-12">
+
+
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Course</h3>
-
+                                    <h3 class="card-title"><?php echo $page_title; ?></h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <a class="btn btn-primary float-right btn-sm" href="<?php echo base_url();?>course/addCourse"><i class="fa fa-plus" style="font-size:14px;"></i>&nbsp;Add</a>
+                                    <a class="btn btn-primary float-right btn-sm" href="<?php echo base_url(); ?>chapter/addChapters"><i class="fa fa-plus" style="font-size:14px;"></i>&nbsp;Add</a>
+
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
                                                 <th>Sr.No</th>
+                                                <th>Chapter Name</th>
+                                                <th>Subject</th>
                                                 <th>Course Name</th>
-                                                <th>Course Price</th>
-                                                <th>Course Duration</th>
-                                                <th>Corse Image</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>MPSC</td>
-                                                <td>Rs. 2000 / -</td>
-                                                <td>12 Months</td>
-                                                <td></td>
+                                                <td>Chapter 1</td>
+                                                <td>ENGLISH</td>
+                                                <td>Rajya Seva</td>
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
-                                                  
-                                                    <a href="#" title="hide"><i class="fa fa-trash"></i> </a>&nbsp;
+                                                    
+                                                    <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td>MTS/NTS</td>
-                                                <td>Rs. 3000 / -</td>
-                                               <td>12 Months</td>
-                                               <td></td>
+                                                <td>Chapter 2</td>
+                                                <td>Marathi</td>
+                                                <td>Rajya Seva</td>
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
-                                                    <a href="#" title="hide"><i class="fa fa-trash"></i> </a>&nbsp;
+                                                    
+                                                    <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
                                                 </td>
                                             </tr>
+
+
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
@@ -106,7 +109,7 @@
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
-            <?php include('common/footer.php') ?>
+            <?php $this->load->view('common/footer'); ?>
 
 
             <!-- Control Sidebar -->

@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1><?php echo $page_title; ?></h1> 
+                    <h1><?php echo $page_title; ?></h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -34,31 +34,28 @@
                         <form method="post" action="">
 
                             <div class="card-body">
-
+                                
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Course Name</label>
+                                        <label for="exampleInputEmail1">title</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <select class="form-control" name="course_id">
+                                        <select class="form-control" name="exam_id">
                                             <option value="1">MPSC</option>
                                             <option>SFDC</option>
                                         </select>  
                                     </div>
                                 </div><br>
-                                <div class="row">
+                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Subject Name</label>
+                                        <label for="exampleInputEmail1">Upload</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="subject_name" class="form-control"  placeholder="Subject Name">
+                                        <input type="file" name="upload_image">
                                     </div>
                                 </div><br>
-                                
-
-
                                 <button class="btn btn-primary" type="submit"><a href="#" style="color:white;">Save</a></button>
-                                <button class="btn btn-primary" type="reset" >Cancel</button>
+                                <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url();?>images" style="color:white;">Cancel</a></button>
                             </div>
                         </form>
 

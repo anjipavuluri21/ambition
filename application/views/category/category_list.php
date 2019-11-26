@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ambition | subject_list</title>
+        <title>AdminLTE 3 | DataTables</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -58,23 +58,23 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <a class="btn btn-primary float-right btn-sm" href="<?php echo base_url(); ?>subject/addSubject"><i class="fa fa-plus" style="font-size:14px;"></i>&nbsp;Add</a>
+                                    <a class="btn btn-primary float-right btn-sm" href="<?php echo base_url(); ?>category/addCategory"><i class="fa fa-plus" style="font-size:14px;"></i>&nbsp;Add</a>
 
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
                                                 <th>Sr.No</th>
-                                                <th>Subject Name</th>
-                                                <th>Course name</th>
+                                                <th>Course Category</th>
+                                                <th>Course Name</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Rajyaseva
+                                                <td>Poorv
                                                 </td>
-                                                <td>MPSC</td>
+                                                <td>Rajyaseva</td>
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
                                                     <a href="#" title="View"><i class="fa fa-eye"></i> </a>&nbsp;
@@ -83,9 +83,9 @@
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td>PSI STI ASST
+                                                <td>Mukhya
                                                 </td>
-                                                <td>MPSC</td>
+                                                <td>Rajyaseva</td>
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
                                                     <a href="#" title="View"><i class="fa fa-eye"></i> </a>&nbsp;
@@ -105,7 +105,7 @@
                     <!-- /.row -->
                 </section>
                 <!-- /.content -->
-            </div>
+            </div>  
             <!-- /.content-wrapper -->
             <?php $this->load->view('common/footer'); ?>
 

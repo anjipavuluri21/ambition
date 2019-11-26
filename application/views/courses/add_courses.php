@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1><?php echo $page_title; ?></h1>
+                    <h1><?php echo $page_title; ?></h1> 
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -37,28 +37,47 @@
 
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Subject Category Name</label>
+                                        <label for="exampleInputEmail1">Exam Name</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <select class="form-control" name="subject_category_id">
-                                            <option value="1">Poorv</option>
-                                            <option>Mukhya</option>
+                                        <select class="form-control" name="exam_id">
+                                            <option value="1">MPSC</option>
+                                            <option>SFDC</option>
+                                        </select>  
+                                    </div>
+                                </div><br>
+                                   <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="exampleInputEmail1">Course Name</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-control" name="exam_id">
+                                            <option value="1">Rajya Seva</option>
+                                            <option>SFDC</option>
                                         </select>  
                                     </div>
                                 </div><br>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Subject Paper Name</label>
+                                        <label for="exampleInputEmail1">Course Price</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="subject_paper_name" class="form-control"  placeholder="Subject Paper Name">
+                                        <input type="text" name="subject_name" class="form-control"  placeholder="Course Price">
+                                    </div>
+                                </div><br>
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="exampleInputEmail1">Course Validity</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" name="subject_name" class="form-control"  placeholder="Course validity">
                                     </div>
                                 </div><br>
                                 
 
 
                                 <button class="btn btn-primary" type="submit"><a href="#" style="color:white;">Save</a></button>
-                                <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url();?>subject_papers" style="color:white;">Cancel</a></button>
+                                <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url();?>/courses" style="color:white;">Cancel</a></button>
                             </div>
                         </form>
 

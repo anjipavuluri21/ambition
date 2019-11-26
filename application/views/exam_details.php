@@ -1,15 +1,14 @@
-<?php $this->load->view('common/header'); ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ambition</title>
+        <title>Ambition | Course Details</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Font Awesome -->
-        <link rel="stylesheet" href=s"<?php echo base_url("assets"); ?>/plugins/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="<?php echo base_url("assets"); ?>/plugins/fontawesome-free/css/all.min.css">
         <!-- Ionicons -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <!-- DataTables -->
@@ -22,11 +21,11 @@
     <body class="hold-transition sidebar-mini">
         <div class="wrapper">
             <!-- Navbar -->
-            <?php $this->load->view('common/navbar'); ?>
+            <?php include('common/navbar.php') ?>
             <!-- /.navbar -->
 
             <!-- Main Sidebar Container -->
-            <?php $this->load->view('common/sidebar'); ?>
+            <?php include('common/sidebar.php'); ?>
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
@@ -35,12 +34,12 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1><?php echo $page_title; ?></h1>
+                                <h1>Exam Details</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active"><?php echo $page_title; ?></li>
+                                    <li class="breadcrumb-item active">Exams</li>
                                 </ol>
                             </div>
                         </div>
@@ -51,48 +50,34 @@
                 <section class="content">
                     <div class="row">
                         <div class="col-12">
-
-
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title"><?php echo $page_title; ?></h3>
+                                    <h3 class="card-title">Exams</h3>
+
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <a class="btn btn-primary float-right btn-sm" href="<?php echo base_url(); ?>chapters/addChapters"><i class="fa fa-plus" style="font-size:14px;"></i>&nbsp;Add</a>
-
+                                    <a class="btn btn-primary float-right btn-sm" href="<?php echo base_url(); ?>exams/addExam"><i class="fa fa-plus" style="font-size:14px;"></i>&nbsp;Add</a>
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
                                                 <th>Sr.No</th>
-                                                <th>Chapter Name</th>
-                                                <th>Main Subject Name</th>
+                                                <th>Exam Name</th>
+                                                <th>Course</th>
+                                                
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>ENGLISH</td>
+                                                <td>MPSC</td>
                                                 <td>Rajya Seva</td>
-                                                <td text-align="center">
-                                                    <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
-                                                    
-                                                    <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
-                                                </td>
+                                                
+                                                <td><i class="fa fa-edit"</i>&nbsp;
+                                                    <i class="fa fa-trash"></i></td>
+                                                
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Marathi</td>
-                                                <td>Rajya Seva</td>
-                                                <td text-align="center">
-                                                    <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
-                                                    
-                                                    <a shref="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
-                                                </td>
-                                            </tr>
-
-
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
@@ -106,7 +91,7 @@
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
-            <?php $this->load->view('common/footer'); ?>
+            <?php include('common/footer.php') ?>
 
 
             <!-- Control Sidebar -->

@@ -37,7 +37,7 @@
 
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Subject Name</label>
+                                        <label for="exampleInputEmail1">Course Category</label>
                                     </div>
                                     <div class="col-md-6">
                                         <select class="form-control" name="subject_id">
@@ -48,17 +48,17 @@
                                 </div><br>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Subject Category Name</label>
+                                        <label for="exampleInputEmail1">Course Name</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="subject_category_name" class="form-control"  placeholder="Subject Category Name">
+                                        <input type="text" name="subject_category_name" class="form-control"  placeholder="Course Name">
                                     </div>
                                 </div><br>
                                 
 
 
                                 <button class="btn btn-primary" type="submit"><a href="#" style="color:white;">Save</a></button>
-                                <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url();?>Subject_category" style="color:white;">Cancel</button>
+                                <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url();?>category" style="color:white;">Cancel</button>
                             </div>
                         </form>
 

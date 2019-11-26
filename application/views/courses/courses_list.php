@@ -1,15 +1,14 @@
-<?php $this->load->view('common/header'); ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ambition</title>
+        <title>Ambition | subject_list</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Font Awesome -->
-        <link rel="stylesheet" href=s"<?php echo base_url("assets"); ?>/plugins/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="<?php echo base_url("assets"); ?>/plugins/fontawesome-free/css/all.min.css">
         <!-- Ionicons -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <!-- DataTables -->
@@ -59,23 +58,26 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <a class="btn btn-primary float-right btn-sm" href="<?php echo base_url(); ?>Subject_papers/addSubjectPaper"><i class="fa fa-plus" style="font-size:14px;"></i>&nbsp;Add</a>
+                                    <a class="btn btn-primary float-right btn-sm" href="<?php echo base_url(); ?>courses/addCourse"><i class="fa fa-plus" style="font-size:14px;"></i>&nbsp;Add</a>
 
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
                                                 <th>Sr.No</th>
-                                                <th>Subject Paper Name</th>
-                                                <th>Subject Category Name</th>
+                                                <th>Exam Name</th>
+                                                <th>Course Name</th>
+                                                <th>Course Price</th>
+                                                <th>Course Validity</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>P1
-                                                </td>
-                                                <td>Poorv</td>
+                                                <td>MPSC</td>
+                                                <td>Rajya Seva</td>
+                                                <td>2000 /-</td>
+                                                <td>12 Months</td>
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
                                                     <a href="#" title="View"><i class="fa fa-eye"></i> </a>&nbsp;
@@ -83,16 +85,18 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>2</td>
-                                                <td>P2
-                                                </td>
-                                                <td>Poorv</td>
+                                                <td>1</td>
+                                                <td>MPSC</td>
+                                                <td>PSI/STI/Asst </td>
+                                                <td>3000 /-</td>
+                                                <td>12 Months</td>
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
                                                     <a href="#" title="View"><i class="fa fa-eye"></i> </a>&nbsp;
                                                     <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
                                                 </td>
                                             </tr>
+                                            
 
 
                                     </table>
