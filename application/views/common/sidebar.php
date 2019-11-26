@@ -124,7 +124,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#s" class="nav-link">
+                    <a href="<?php echo base_url().'Practice_papers';?>" class="nav-link">
                      <!--<i class="fal fa-sticky nav-icon"></i>-->
                         <i class="fas fa-book nav-icon"></i>
                         <p>Practice Papers</p>

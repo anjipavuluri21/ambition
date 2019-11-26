@@ -80,7 +80,7 @@
                                                 <td>Poorv</td>
                                                 <td>P1</td>
                                                 <td>Marathi</td>
-                                                <td>10</td>
+                                                <td><a href="<?php echo base_url().'Officers_videos';?>">10</a></td>
                                                 
                                             </tr>
 

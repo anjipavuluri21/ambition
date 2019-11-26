@@ -1,15 +1,14 @@
-<?php $this->load->view('common/header'); ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ambition</title>
+        <title>Ambition | Purchase</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Font Awesome -->
-        <link rel="stylesheet" href=s"<?php echo base_url("assets"); ?>/plugins/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="<?php echo base_url("assets"); ?>/plugins/fontawesome-free/css/all.min.css">
         <!-- Ionicons -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <!-- DataTables -->
@@ -59,34 +58,32 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <a class="btn btn-primary float-right btn-sm" href="<?php echo base_url(); ?>officers_videos/addOfficersVedios"><i class="fa fa-plus" style="font-size:14px;"></i>&nbsp;Add</a>
+                                    <a class="btn btn-primary float-right btn-sm" href="<?php echo base_url(); ?>Practice_papers/addPracticePaper"><i class="fa fa-plus" style="font-size:14px;"></i>&nbsp;Add</a>
 
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Sr.No</th>
-                                                <th>Video Title</th>
-                                                <th>Video Thumbnail</th>
-                                                <th>Video</th>
-                                                <th>Actions</th>
+                                                <td>S.No</td>
+                                                <td>Course Name</td>
+                                                <td>Subject Name</td>
+                                                <td>Subject Category</td>
+                                                <td>Main Subjects</td>
+                                                <td>Practice Papers</td>
+                                                <td>Total Papers</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Rajya seva introduction program - 1</td>
-                                                <td><img src="<?php echo base_url() . 'uploads/officers_videos/rajya_seva_intro/screenshot(1).png' ?>" width="100" height="100" alt="" title="Thumbnail"/></td>
-                                                <td>
-                                                    <video width="150" height="150" controls>
-                                                        <source src="<?php echo base_url() . 'uploads/officers_videos/rajya_seva_intro/SampleVideo_1280x720_1mb.mp4' ?>" type="video/mp4">
-                                                    </video>
-                                                </td>
-                                                <td text-align="center">
-                                                    <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
-                                                    <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
-                                                    <a href="#" title="delete"><i class="fa fa-trash"></i> </a>&nbsp;
-                                                </td>
+                                                <td>MPSC</td>
+                                                <td>Rajya Seva</td>
+                                                <td>Poorv</td>
+                                                <td>P1</td>
+                                                <td>Marathi</td>
+                                                <td>2</td>
+
                                             </tr>
+                                                
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
