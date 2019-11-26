@@ -59,22 +59,23 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <a class="btn btn-primary float-right btn-sm" href="<?php echo base_url(); ?>images/addImages"><i class="fa fa-plus" style="font-size:14px;"></i>&nbsp;Add</a>
+                                    <a class="btn btn-primary float-right btn-sm" href="<?php echo base_url(); ?>banner/addBanner"><i class="fa fa-plus" style="font-size:14px;"></i>&nbsp;Add</a>
 
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
                                                 <th>Sr.No</th>
-                                                <th>Subject Name</th>
-                                                <th>Image</th>
+                                                <th>Subject</th>
+                                                <th>Banner</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>MPSC</td>
+                                                <td>Rajya Seva</td>
                                                 <td><img src="<?php echo base_url() . 'uploads/officers_videos/rajya_seva_intro/screenshot(1).png' ?>" width="100" height="100" alt="" title="Thumbnail"/></td>
+                                                
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
                                                     <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;

@@ -118,17 +118,36 @@
                     </ul>
 
                 </li>
-                <li class="nav-item">
-                    <a href="<?php echo base_url();?>images" class="nav-link">
-                        <i class="fa fa-image nav-icon"></i>
-                        <p>Images</p>
-                    </a>
-                </li>
+                <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-image"></i>
+                            <p>
+                                Images
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?php echo base_url();?>images" class="nav-link">
+                                    <i class="fa fa-book  nav-icon"></i>
+                                    <p>Home Page</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo base_url();?>banner" class="nav-link">
+                                <!--<i class="far fa-circle nav-icon"></i>-->
+                                    <i class="fa fa-flag nav-icon"></i>
+                                    <p>Banner</p>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
 
                 <li class="nav-item">
                     <a href="<?php echo base_url(); ?>video/all_videos" class="nav-link">
-                        
-                       <i class="fas fa-upload nav-icon"></i>
+                        <i class="fas fa-upload nav-icon"></i>
                         <p>Course Videos Uploading</p>
                     </a>
                 </li>
@@ -140,7 +159,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    
+
                     <a href="<?php echo base_url() . 'Practice_papers'; ?>" class="nav-link">
                      <!--<i class="fal fa-sticky nav-icon"></i>-->
                         <i class="fas fa-book nav-icon"></i>
@@ -173,7 +192,7 @@
 
                         </ul>
 
-                        </li>
+                    </li>
                 <?php } ?>
             </ul>
         </nav>

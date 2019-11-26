@@ -19,7 +19,5 @@ class Images extends CI_Controller {
         ];
         $this->load->view('images/add_image',$content);
     }
-
     
-
 }

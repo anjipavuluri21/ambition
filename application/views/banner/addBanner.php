@@ -34,28 +34,19 @@
                         <form method="post" action="">
 
                             <div class="card-body">
+
                                 
+                               
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Title</label>
+                                        <label for="exampleInputEmail1">Banner</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <select class="form-control" name="exam_id">
-                                            <option value="1">MPSC</option>
-                                            <option>SFDC</option>
-                                        </select>  
-                                    </div>
-                                </div><br>  
-                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Upload</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="file" name="upload_image">
+                                        <input type="file" name="banner_name"   >
                                     </div>
                                 </div><br>
-                                <button class="btn btn-primary" type="submit"><a href="#" style="color:white;">Save</a></button>
-                                <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url();?>images" style="color:white;">Cancel</a></button>
+                                 <button class="btn btn-primary" type="submit"><a href="#" style="color:white;">Save</a></button>
+                                <button class="btn btn-primary" type="reset" ><a href="#" style="color:white;">Cancel</a></button>
                             </div>
                         </form>
 
