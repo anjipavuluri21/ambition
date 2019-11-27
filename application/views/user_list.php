@@ -61,7 +61,7 @@
                                             <tr>
                                                 <th>Sr.No</th>
                                                 <th>User Name</th>
-                                                <th>User Role</th>
+                                                <th>User Type</th>
                                                 <th>Password</th>
                                                 <th>Action</th>
                                             </tr>

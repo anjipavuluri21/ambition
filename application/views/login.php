@@ -29,7 +29,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/dist/css/util.css'); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/dist/css/main.css'); ?>">
         <!--===============================================================================================-->
-    </head>
+    </head> 
     <body>
 
         <div class="limiter">
