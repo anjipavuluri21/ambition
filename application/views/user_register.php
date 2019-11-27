@@ -1,66 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ambition | Registration Page</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-
-    <!-- Main css -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/style.css');?>">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="<?php echo base_url('assets/plugins/fontawesome-free/css/all.min.css');?>">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="<?php echo base_url('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css');?>">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/adminlte.min.css');?>">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body>
+<body class="hold-transition register-page">
+<div class="register-box">
+  <div class="register-logo">
+   <b>Ambition</b>
+  </div>
 
-    <div class="main">
+  <div class="card">
+    <div class="card-body register-card-body">
+      <p class="login-box-msg">Register</p>
 
-        <div class="container">
-            <form method="POST" class="appointment-form" id="appointment-form">
-                <h2>education appointment form</h2>
-                <div class="form-group-1">
-                    <input type="text" name="title" id="title" placeholder="Title" required />
-                    <input type="text" name="name" id="name" placeholder="Your Name" required />
-                    <input type="email" name="email" id="email" placeholder="Email" required />
-                    <input type="number" name="phone_number" id="phone_number" placeholder="Phone number" required />
-                    <div class="select-list">
-                        <select name="course_type" id="course_type">
-                            <option slected value="">Course Type</option>
-                            <option value="society">Society</option>
-                            <option value="language">Language</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group-2">
-                    <h3>How would you like to bo located ?</h3>
-                    <div class="select-list">
-                        <select name="confirm_type" id="confirm_type">
-                            <option seleected value="">By phone</option>
-                            <option value="by_email">By email</option>
-                        </select>
-                    </div>
-                    <div class="select-list">
-                        <select name="hour_appointment" id="hour_appointment">
-                            <option seleected value="">Hours : 8am 10pm</option>
-                            <option value="9h-11h">Hours : 9am 11pm</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                    <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to the  <a href="#" class="term-service">Terms and Conditions</a></label>
-                </div>
-                <div class="form-submit">
-                    <input type="submit" name="submit" id="submit" class="submit" value="Request an appointment" />
-                </div>
-            </form>
+      <form action="<?php echo base_url();?>user/user_register" method="post">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="name" placeholder="First Name">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
         </div>
-
+          <div class="input-group mb-3">
+              <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+            <input type="email" class="form-control" name="email" placeholder="Email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+            <input type="password" class="form-control" name="password" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="mobile_no" placeholder="Mobile Number">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-phone"></span>
+            </div>
+          </div>
+        </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" name="state" placeholder="State">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-city"></span>
+            </div>
+          </div>
+        </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" name="district" placeholder="District">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+           <div class="input-group mb-3">
+            <input type="text" class="form-control" name="pin_code" placeholder="Pin Code">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fa fa-map-pin"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" name="save" class="btn btn-primary btn-block">Register</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+      <?php echo validation_errors(); ?>
+      
+      <a href="<?php echo base_url();?>" class="text-center">I already have a account</a>
     </div>
+    <!-- /.form-box -->
+  </div><!-- /.card -->
+</div>
+<!-- /.register-box -->
 
-    <!-- JS -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+<!-- jQuery -->
+<script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js');?>"></script>
+<!-- Bootstrap 4 -->
+<script src="<?php echo base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js');?>"></script>
+<!-- AdminLTE App -->
+<script src="<?php echo base_url('assets/dist/js/adminlte.min.js');?>"></script>
+</body>
 </html>
