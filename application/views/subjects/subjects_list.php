@@ -7,7 +7,8 @@
         <title>Ambition</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <script src="http://www.hinkhoj.com/common/js/keyboard.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://www.hinkhoj.com/common/css/keyboard.css" />
         <!-- Font Awesome -->
         <link rel="stylesheet" href=s"<?php echo base_url("assets"); ?>/plugins/fontawesome-free/css/all.min.css">
         <!-- Ionicons -->
@@ -65,16 +66,16 @@
                                         <thead>
                                             <tr>
                                                 <th>Sr.No</th>
-                                                <th>Subject</th>
-                                                <th>Course Name</th>
+                                                <th>Course paper</th>
+                                                <th>Subect Name</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>ENGLISH</td>
-                                                <td>Rajya Seva</td>
+                                                <td>P1</td>
+                                                <td>English</td>
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
                                                     
@@ -83,8 +84,8 @@
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td>Marathi</td>
-                                                <td>Rajya Seva</td>
+                                                <td>P2</td>
+                                                <td>मराठी</td>
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
                                                     

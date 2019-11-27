@@ -64,17 +64,16 @@
                                         <thead>
                                             <tr>
                                                 <th>Sr.No</th>
-                                                <th>Course Category</th>
                                                 <th>Course Name</th>
+                                                <th>Course Category</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Poorv
-                                                </td>
                                                 <td>Rajyaseva</td>
+                                                <td>Poorv</td>
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
                                                     <a href="#" title="View"><i class="fa fa-eye"></i> </a>&nbsp;
@@ -83,9 +82,8 @@
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td>Mukhya
-                                                </td>
                                                 <td>Rajyaseva</td>
+                                                <td>Mukhya</td>
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
                                                     <a href="#" title="View"><i class="fa fa-eye"></i> </a>&nbsp;

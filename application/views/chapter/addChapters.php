@@ -37,28 +37,26 @@
                                 
                                 <div class="row">
                                     <div class="col-md-6">
+                                        <label for="exampleInputEmail1">Subject</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-control" name="subject_name">
+                                            <option value="1">English</option>
+                                            <option>Marathi</option>
+                                        </select>  
+                                    </div>
+                                </div><br> 
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
                                         <label for="exampleInputEmail1">Chapter Name</label>
                                     </div>
                                     <div class="col-md-6">
                                         <input type="text" name="subject_paper_name" class="form-control"  placeholder="Chapter Name">
                                     </div>
                                 </div><br>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Subject</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="text" name="subject_paper_name" class="form-control"  placeholder="Subject">
-                                    </div>
-                                </div><br>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Course Name</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="text" name="subject_paper_name" class="form-control"  placeholder="Course Name">
-                                    </div>
-                                </div><br>
+                               
+                                
                                 <button class="btn btn-primary" type="submit"><a href="#" style="color:white;">Save</a></button>
                                 <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url();?>chapter" style="color:white;">Cancel</a></button>
                             </div>

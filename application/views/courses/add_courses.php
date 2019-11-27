@@ -51,10 +51,7 @@
                                         <label for="exampleInputEmail1">Course Name</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <select class="form-control" name="exam_id">
-                                            <option value="1">Rajya Seva</option>
-                                            <option>SFDC</option>
-                                        </select>  
+                                        <input type="text" name="course_name" class="form-control"  placeholder="Course Name">
                                     </div>
                                 </div><br>
                                 <div class="row">

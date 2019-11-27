@@ -37,7 +37,7 @@
 
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Course Category</label>
+                                        <label for="exampleInputEmail1">Course Name</label>
                                     </div>
                                     <div class="col-md-6">
                                         <select class="form-control" name="subject_id">
@@ -48,10 +48,10 @@
                                 </div><br>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Course Name</label>
+                                        <label for="exampleInputEmail1">Course Category</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="subject_category_name" class="form-control"  placeholder="Course Name">
+                                        <input type="text" name="course_category" class="form-control"  placeholder="Course Category">
                                     </div>
                                 </div><br>
                                 

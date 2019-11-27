@@ -34,20 +34,20 @@
                         <form method="post" action="">
 
                             <div class="card-body">
-                                <div class="row">
+<!--                                <div class="row">
                                     <div class="col-md-6">
                                         <label for="exampleInputEmail1">Exam Name</label>
                                     </div>
                                     <div class="col-md-6">
                                         <input type="text" name="course_name" class="form-control"  placeholder="Name">
                                     </div>
-                                </div><br>
+                                </div><br>-->
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Course</label>
+                                        <label for="exampleInputEmail1">Exam</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="course_name" class="form-control"  placeholder="Course Name">
+                                        <input type="text" name="exam_name" class="form-control"  placeholder="Exam Name">
                                     </div>
                                 </div><br>
 

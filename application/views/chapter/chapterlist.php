@@ -65,18 +65,16 @@
                                         <thead>
                                             <tr>
                                                 <th>Sr.No</th>
-                                                <th>Chapter Name</th>
                                                 <th>Subject</th>
-                                                <th>Course Name</th>
+                                                <th>Chapter Name</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Chapter 1</td>
                                                 <td>ENGLISH</td>
-                                                <td>Rajya Seva</td>
+                                                <td>Chapter 1</td>
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
                                                     
@@ -85,9 +83,8 @@
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td>Chapter 2</td>
                                                 <td>Marathi</td>
-                                                <td>Rajya Seva</td>
+                                                 <td>Chapter 2</td>
                                                 <td text-align="center">
                                                     <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
                                                     

@@ -37,21 +37,21 @@
 
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Subject</label>
+                                        <label for="exampleInputEmail1">Course Paper</label>
                                     </div>
                                     <div class="col-md-6">
                                         <select class="form-control" name="subject_category_id">
-                                            <option value="1">Rajya Seva</option>
-                                            <option>MTS/NTS</option>
+                                            <option value="1">P1</option>
+                                            <option>P2</option>
                                         </select>  
                                     </div>
                                 </div><br>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Course Name</label>
+                                        <label for="exampleInputEmail1">Subject Name</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="subject_paper_name" class="form-control"  placeholder="Course Name">
+                                        <input  type="text" name="subject_name" class="form-control"  placeholder="Subject Name">
                                     </div>
                                 </div><br>
                                 
