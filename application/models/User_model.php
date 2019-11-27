@@ -33,22 +33,24 @@ class User_model extends CI_Model {
 //        echo "welcome";
 //        exit;
         $user_list = array(
-            'name' => $name,
-            'last_name' => $last_name,
-            'email' => $email,
-            'mobile_no' => $mobile_no,
-            'password' => $password,
-            'state' => $state,
-            'district' => $district,
+            'name' => $insert_data['name'],
+            'last_name' => $insert_data['last_name'],
+            'email' => $insert_data['email'],
+            'mobile_no' => $insert_data['mobile_no'],
+            'password' => $insert_data['password'],
+            'state' => $insert_data['state'],
+            'district' => $insert_data['district'],
         );
 //        print_r($user_list);exit;
-        $result=$this->db->insert('users', $user_list);
-      print_r($result);exit;
-        if (count($result) > 0) {
-            return $result;
+        $result = $this->db->insert('users', $user_list);
+//        print_r($result);exit;
+        if ($this->db->affected_rows() > 0) {
+            $response['msg'] = "success";
         } else {
-            return false;
+            $response['msg'] = "fail";
+            
         }
+        return $response;
     }
 
 }

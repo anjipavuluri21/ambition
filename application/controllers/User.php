@@ -83,7 +83,6 @@ class User extends CI_Controller {
         $this->form_validation->set_rules('email', 'Email', 'required|trim');
         $this->form_validation->set_rules('password', 'Password', 'required|trim');
         $this->form_validation->set_rules('mobile_no', 'Mobile Number', 'required|trim');
-        
         $this->form_validation->set_rules('state', 'State');
         $this->form_validation->set_rules('district', 'District');
         $this->form_validation->set_rules('pin_Code', 'pin Code');
