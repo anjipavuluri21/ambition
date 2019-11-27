@@ -61,22 +61,31 @@
                                             <tr>
                                                 <th>Sr.No</th>
                                                 <th>User Name</th>
-                                                <th>User Type</th>
+                                                <th>Email</th>
                                                 <th>Password</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php 
+                                            $i=1;
+                                            foreach ($data as $row){
+                                                ?>
                                             <tr>
-                                                <td>1</td>
-                                                <td>Anji</td>
-                                                <td>SuperAdmin</td>
-                                                <td>123456</td>
+                                                <td><?php echo $i;?></td>
+                                                <td><?php echo $row->name;?></td>
+                                                <td><?php echo $row->email;?></td>
+                                                <td><?php echo $row->password;?></td>
                                                 <td text-align="center">
                                                     <button type="button"  data-toggle="modal" data-target="#myModal">View</button>
 
                                                 </td>
                                             </tr>
+                                            <?php 
+                                            $i++;
+                                            }
+                                            ?>
+                                            
                                     </table>
                                 </div>
                                 <!-- /.card-body -->

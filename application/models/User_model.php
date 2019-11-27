@@ -37,7 +37,7 @@ class User_model extends CI_Model {
             'last_name' => $insert_data['last_name'],
             'email' => $insert_data['email'],
             'mobile_no' => $insert_data['mobile_no'],
-            'password' => $insert_data['password'],
+            'password' => md5($insert_data['password']),
             'state' => $insert_data['state'],
             'district' => $insert_data['district'],
         );
@@ -52,5 +52,10 @@ class User_model extends CI_Model {
         }
         return $response;
     }
-
+    public function display_user(){
+        $query=$this->db->query('select * from users');
+        return $query->result();
+        
+    }
+        
 }

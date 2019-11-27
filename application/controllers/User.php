@@ -9,11 +9,13 @@ class User extends CI_Controller {
     }
 
     public function register() {
-//        $this->load->view('user_register');
+        $this->load->view('user_register');
     }
 
     public function user_list() {
-        $this->load->view('user_list');
+        $this->load->model('User_model');
+        $result['data']=$this->User_model->display_user();
+        $this->load->view('user_list',$result);
     }
 
     public function login() {
@@ -101,5 +103,7 @@ class User extends CI_Controller {
             }
         }
     }
-
+    
+   
+    
 }
