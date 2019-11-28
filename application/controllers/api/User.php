@@ -11,37 +11,38 @@ class User extends CI_Controller {
 
     public function login() {
         $response = [];
-        if (count($_POST)) {
-            $email = trim($this->input->post('email'));
-            $password = trim($this->input->post('password'));
+//        if (count($_POST)) {
+        $email = trim($this->input->post('email'));
+        $password = trim($this->input->post('password'));
 
-            $this->form_validation->set_rules('email', 'Email', 'required');
-            $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
 
-            if ($this->form_validation->run() == FALSE) {
-                $response['status'] = "Fail";
-                $response['message'] = validation_errors();
-            } else {
-                $usercheck = $this->User_model->loginCheck($email, $password);
-                if ($usercheck != false) {
-                    $user = [
-                        'user_id' => $usercheck[0]['user_id'],
-                        'user_name' => $usercheck[0]['name'],
-                        'user_email' => $usercheck[0]['email'],
-                        'user_type' => $usercheck[0]['user_type'],
-                    ];
-                    $response['status'] = "Success";
-                    $response['message'] = "Login Succesfully";
-                    $response['result'] = $user;
-                } else {
-                    $response['status'] = "Fail";
-                    $response['message'] = "Invalid Credntials!";
-                }
-            }
-        } else {
+        if ($this->form_validation->run() == FALSE) {
             $response['status'] = "Fail";
-            $response['message'] = "Inavalid Inputs";
+            $response['message'] = validation_errors();
+        } else {
+            $usercheck = $this->User_model->loginCheck($email, $password);
+            if ($usercheck != false) {
+                $user = [
+                    'user_id' => $usercheck[0]['user_id'],
+                    'user_name' => $usercheck[0]['name'],
+                    'user_email' => $usercheck[0]['email'],
+                    'user_type' => $usercheck[0]['user_type'],
+                ];
+                $response['status'] = "Success";
+                $response['message'] = "Login Succesfully";
+                $response['result'] = $user;
+            } else {
+                $response['status'] = "Fail";
+                $response['message'] = "Invalid Credntials!";
+            }
         }
+//        }
+//        else {
+//            $response['status'] = "Fail";
+//            $response['message'] = "Inavalid Inputs";
+//        }
 
         echo json_encode($response);
     }
@@ -76,15 +77,14 @@ class User extends CI_Controller {
             } else {
                 $result = $this->User_model->register_user($insert_data);
                 if ($result == 'success') {
-                   $response['status'] = "Success";
+                    $response['status'] = "Success";
                     $response['message'] = "User Added Succesfully";
                 } else {
                     $response['status'] = "Fail";
                     $response['message'] = "Failed to add User";
                 }
             }
-        }
-         else {
+        } else {
             $response['status'] = "Fail";
             $response['message'] = "Inavalid Inputs";
         }

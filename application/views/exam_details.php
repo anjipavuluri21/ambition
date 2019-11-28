@@ -63,21 +63,28 @@
                                             <tr>
                                                 <th>Sr.No</th>
                                                 <th>Exam Name</th>
-<!--                                                <th>Course</th>-->
+
 
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>MPSC</td>
-                                                <!--<td>Rajya Seva</td>-->
+                                            <?php
+                                            $i = 1;
+                                            foreach ($data as $row) {
+                                                ?>
+                                                <tr>
+                                                    <td><?php echo $i; ?></td>
+                                                    <td><?php echo $row->exam_name; ?></td>
 
-                                                <td><i class="fa fa-edit"</i>&nbsp;
-                                                    <i class="fa fa-trash"></i></td>
+                                                    <td><a href="<?php echo base_url();?>exams/editExam/<?php echo $row->exam_id;?>"><i class="fa fa-edit"></i></a>&nbsp;
+                                                        <a href="<?php echo base_url();?>exams/deleteExam/<?php echo $row->exam_id;?>"><i class="fa fa-trash"></i></td>
 
-                                            </tr>
+                                                </tr>
+                                                <?php
+                                                $i++;
+                                            }
+                                            ?>
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
