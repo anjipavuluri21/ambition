@@ -34,7 +34,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Exam Details</h1>
+                                <h1>Edit Exams</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
@@ -57,24 +57,22 @@
                                     <!-- <div class="card-header">
                                       <h3 class="card-title">Quick Example</h3>
                                     </div> -->
-                                    <form method="post" action="<?php echo base_url();?>exams/updateExamname">
+                                    <form method="post" action="<?php echo base_url(); ?>exams/updateExam">
 
                                         <div class="card-body">
 
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <label for="exampleInputEmail1">Exam Name</label>
+                                                    <label for="exampleInputEmail1">Exam</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="text" name="exam_name" value="<?php echo $data->exam_name?>">
-                                                </div>
-                                            </div><br>
-                                             <div class="row">
-<!--                                                <div class="col-md-6">
-                                                    <label for="exampleInputEmail1">id</label>
-                                                </div>-->
-                                                <div class="col-md-6">
-                                                    <input type="hidden" name="id" value="<?php echo $data->exam_id?>">
+                                                    <input type="text" name="exam_name" class="form-control"  placeholder="Exam Name" value="<?php echo $exam_data->exam_name;
+            ;
+            ?>">
+                                                    <input type="hidden" name="exam_id" class="form-control"  placeholder="Exam Name" value="<?php echo $exam_data->exam_id;
+                                                           ;
+            ?>">
+
                                                 </div>
                                             </div><br>
 
@@ -94,7 +92,7 @@
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
-            <?php include('common/footer.php') ?>
+<?php include('common/footer.php') ?>
 
 
             <!-- Control Sidebar -->

@@ -4,7 +4,16 @@
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-
+<?php if (!empty($_SESSION['msg'])) { ?>
+        <div class="box-body custommsg" >
+            <div class="alert alert-<?php echo $_SESSION['msg']['type']; ?>">
+                <h4> Alert!</h4>
+                <?php
+                print_r($_SESSION['msg']['text']);
+                ?>
+            </div>
+        </div>
+<?php } ?>
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -31,7 +40,7 @@
                         <!-- <div class="card-header">
                           <h3 class="card-title">Quick Example</h3>
                         </div> -->
-                        <form method="post" action="<?php echo base_url();?>courses/add_course">
+                        <form method="post" action="<?php echo base_url();?>courses/addCourse">
 
                             <div class="card-body">
 
@@ -43,7 +52,7 @@
                                         <select value="" class="form-control" name="exam_id" >
                                             <option>Select ExamName</option>
                                             <?php 
-                                            foreach($result as $row){  ?>
+                                            foreach($exams_list as $row){  ?>
                                             <option value="<?php echo $row->exam_id;?>"><?php echo $row->exam_name;?></option>
                                             <?php 
                                             }
@@ -70,10 +79,10 @@
                                 </div><br>
                                  <div class="row">
                                     <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Course Validity</label>
+                                        <label for="exampleInputEmail1">Course Validity </label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="course_validity" class="form-control"  placeholder="Course validity">
+                                        <input type="text" name="course_validity" class="form-control"  placeholder="Course validity in months">
                                     </div>
                                 </div><br>
                                 

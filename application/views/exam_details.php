@@ -19,6 +19,7 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     </head>
     <body class="hold-transition sidebar-mini">
+
         <div class="wrapper">
             <!-- Navbar -->
             <?php include('common/navbar.php') ?>
@@ -29,6 +30,16 @@
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
+                <?php if (!empty($_SESSION['msg'])) { ?>
+                    <div class="box-body custommsg" >
+                        <div class="alert alert-<?php echo $_SESSION['msg']['type']; ?>">
+                            <h4> Alert!</h4>
+                            <?php
+                            print_r($_SESSION['msg']['text']);
+                            ?>
+                        </div>
+                    </div>
+                <?php } ?>
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <div class="container-fluid">
@@ -77,8 +88,8 @@
                                                     <td><?php echo $i; ?></td>
                                                     <td><?php echo $row->exam_name; ?></td>
 
-                                                    <td><a href="<?php echo base_url();?>exams/editExam/<?php echo $row->exam_id;?>"><i class="fa fa-edit"></i></a>&nbsp;
-                                                        <a href="<?php echo base_url();?>exams/deleteExam/<?php echo $row->exam_id;?>"><i class="fa fa-trash"></i></td>
+                                                    <td><a href="<?php echo base_url(); ?>exams/updateExam/<?php echo $row->exam_id; ?>"><i class="fa fa-edit"></i></a>&nbsp;
+                                                        <a href="<?php echo base_url(); ?>exams/deleteExam/<?php echo $row->exam_id; ?>" onclick="return confirm('Are you sure？')"><i class="fa fa-trash"></i></td>
 
                                                 </tr>
                                                 <?php
@@ -122,17 +133,18 @@
         <script src="<?php echo base_url("assets"); ?>/dist/js/demo.js"></script>
         <!-- page script -->
         <script>
-            $(function () {
-                $("#example1").DataTable();
-                $('#example2').DataTable({
-                    "paging": true,
-                    "lengthChange": false,
-                    "searching": false,
-                    "ordering": true,
-                    "info": true,
-                    "autoWidth": false,
-                });
-            });
+                                                        $(function () {
+                                                            $("#example1").DataTable();
+                                                            $('#example2').DataTable({
+                                                                "paging": true,
+                                                                "lengthChange": false,
+                                                                "searching": false,
+                                                                "ordering": true,
+                                                                "info": true,
+                                                                "autoWidth": false,
+                                                            });
+                                                        });
         </script>
+
     </body>
 </html>

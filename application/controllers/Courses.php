@@ -7,6 +7,9 @@ class Courses extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Course_model');
+        $this->load->model('Exams_model');
+        date_default_timezone_set("Asia/kolkata");
+
     }
 
     public function index() {
@@ -17,13 +20,6 @@ class Courses extends CI_Controller {
     }
 
     public function addCourse() {
-        $content = [
-            'page_title' => "Add Courses",
-        ];
-        $this->load->view('courses/add_courses', $content);
-    }
-
-    public function add_course() {
         if (count($_POST)) {
             $insert_data = [];
             $insert_data['exam_id'] = $this->input->post('exam_id');
@@ -44,21 +40,26 @@ class Courses extends CI_Controller {
                 $this->load->view('courses/add_courses');
             } else {
 
-                $result['data'] = $this->Course_model->insertExam($insert_data);
+                $result = $this->Course_model->insertCourse($insert_data);
                 if ($result == 'success') {
                     $successMsg['text'] = "Course Added Succesfully";
                     $successMsg['type'] = "success";
                     $this->session->set_flashdata('msg', $successMsg);
-                    $this->load->view('courses/add_course');
+                    $this->load->view('courses/add_courses');
                 } else {
-                    $errorMsg['text'] = "Failed to Course contact admin";
+                    $errorMsg['text'] = "Failed to Add Course contact admin";
                     $errorMsg['type'] = "danger";
                     $this->session->set_flashdata('msg', $errorMsg);
                     $this->load->view('courses/add_courses');
                 }
             }
         } else {
-            $this->load->view('courses/add-course');
+
+            $data['content'] = [
+                'page_title' => "Add Courses",
+            ];
+            $data['exams_list']=$this->Exams_model->examsList();
+            $this->load->view('courses/add_courses', $data);
         }
     }
 

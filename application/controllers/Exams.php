@@ -54,57 +54,58 @@ class Exams extends CI_Controller {
         $this->load->view('mpsc_subjects');
     }
 
-    public function editExam() {
-        $id = $this->uri->segment('3');
-        $result['data'] = $this->Exams_model->examEditValues($id);
-//        print_r($result['data']);exit;
-        $this->load->view('edit_exams', $result);
-    }
-
-    public function updateExamname() {
-//        echo "update values here";
-        if ($this->input->post('update')) {
+    public function updateExam() {
+        if (count($_POST)) {
             $exam_name = $this->input->post('exam_name');
-            $id = $this->input->post('id');
-            $result['data'] = $this->Exams_model->updateExamname($exam_name, $id);
-        }
+            $exam_id = $this->input->post('exam_id');
 
-//        if (count($_POST)) {
-//            $exam_name = $this->input->post('exam_name');
-//            $id=$this->input->post('id');
-//            $this->load->library('form_validation');
-//            $this->form_validation->set_rules('exam_name', 'Exam Name', 'required');
-//            $this->form_validation->set_rules('id', 'id');
-//
-//            if ($this->form_validation->run() == FALSE) {
-//                $errorMsg['text'] = validation_errors();
-//                $errorMsg['type'] = "danger";
-//                $this->session->set_flashdata('msg', $errorMsg);
-//                $this->load->view('edit_exams');
-//            } else {
-//
-//                $result = $this->Exams_model->updateExamname($exam_name,$id);
-//                if ($result == 'success') {
-//                    $successMsg['text'] = "Examname updated Succesfully";
-//                    $successMsg['type'] = "success";
-//                    $this->session->set_flashdata('msg', $successMsg);
-//                    $this->load->view('edit_exams');
-//                } else {
-//                    $errorMsg['text'] = "Failed to exam contact admin";
-//                    $errorMsg['type'] = "danger";
-//                    $this->session->set_flashdata('msg', $errorMsg);
-//                    $this->load->view('edit_exams');
-//                }
-//            }
-//        } else {
-//            $this->load->view('edit_exams');
-//        }
+            $this->load->library('form_validation');
+            $this->form_validation->set_rules('exam_name', 'Exam Name', 'required');
+
+            if ($this->form_validation->run() == FALSE) {
+                $errorMsg['text'] = validation_errors();
+                $errorMsg['type'] = "danger";
+                $this->session->set_flashdata('msg', $errorMsg);
+                $this->load->view('edit_exams');
+            } else {
+
+                $result = $this->Exams_model->updateExam($exam_name, $exam_id);
+                if ($result == 'success') {
+                    $successMsg['text'] = "Exam updated Succesfully";
+                    $successMsg['type'] = "success";
+                    $this->session->set_flashdata('msg', $successMsg);
+                    redirect(base_url('exams/examDetails'));
+//                    $this->load->view('exam_details');
+                } else {
+                    $errorMsg['text'] = "Failed to update exam contact admin";
+                    $errorMsg['type'] = "danger";
+                    $this->session->set_flashdata('msg', $errorMsg);
+                    $this->load->view('edit_exams');
+                }
+            }
+        } else {
+            $exam_id = $this->uri->segment(3);
+//            print_r($exam_id);exit;
+            $data['exam_data'] = $this->Exams_model->getExamdata($exam_id);
+//            print_r($data['exams_data']);exit;
+            $this->load->view('edit_exams', $data);
+        }
     }
 
     public function deleteExam() {
         $id = $this->uri->segment(3);
-        $this->Exams_model->delete_exam_name($id);
-        redirect('exams/examDetails');
-            }
+        $result = $this->Exams_model->delete_exam_name($id);
+        if ($result == 'success') {
+            $successMsg['text'] = "Exam Deleted Succesfully";
+            $successMsg['type'] = "success";
+            $this->session->set_flashdata('msg', $successMsg);
+            redirect(base_url('exams/examDetails'));
+        } else {
+            $errorMsg['text'] = "Failed to Delete exam contact admin";
+            $errorMsg['type'] = "danger";
+            $this->session->set_flashdata('msg', $errorMsg);
+            redirect(base_url('exams/examDetails'));
+        }
+    }
 
 }

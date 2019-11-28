@@ -12,6 +12,8 @@ parent::__construct();
             'course_name' => $insert_data['course_name'],
             'course_price' => $insert_data['course_price'],
             'course_validity' => $insert_data['course_validity'],
+            'created_at' => date('y-m-d h:i:s'),
+            'created_by' => $this->session->userdata['user_data']['user_id'],
               );
     
         $result = $this->db->insert('courses', $courses_list);
