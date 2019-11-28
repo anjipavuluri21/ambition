@@ -9,12 +9,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1><?php echo $page_title; ?></h1> 
+                    <h1>Add Course</h1> 
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active"><?php echo $page_title; ?></li>
+                        <li class="breadcrumb-item active">Add Course</li>
                     </ol>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                         <!-- <div class="card-header">
                           <h3 class="card-title">Quick Example</h3>
                         </div> -->
-                        <form method="post" action="">
+                        <form method="post" action="<?php echo base_url();?>courses/add_course">
 
                             <div class="card-body">
 
@@ -40,9 +40,15 @@
                                         <label for="exampleInputEmail1">Exam Name</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <select class="form-control" name="exam_id">
-                                            <option value="1">MPSC</option>
-                                            <option>SFDC</option>
+                                        <select value="" class="form-control" name="exam_id" >
+                                            <option>Select ExamName</option>
+                                            <?php 
+                                            foreach($result as $row){  ?>
+                                            <option value="<?php echo $row->exam_id;?>"><?php echo $row->exam_name;?></option>
+                                            <?php 
+                                            }
+                                            ?>
+                                            
                                         </select>  
                                     </div>
                                 </div><br>
@@ -59,7 +65,7 @@
                                         <label for="exampleInputEmail1">Course Price</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="subject_name" class="form-control"  placeholder="Course Price">
+                                        <input type="text" name="course_price" class="form-control"  placeholder="Course Price">
                                     </div>
                                 </div><br>
                                  <div class="row">
@@ -67,13 +73,13 @@
                                         <label for="exampleInputEmail1">Course Validity</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="subject_name" class="form-control"  placeholder="Course validity">
+                                        <input type="text" name="course_validity" class="form-control"  placeholder="Course validity">
                                     </div>
                                 </div><br>
                                 
 
 
-                                <button class="btn btn-primary" type="submit"><a href="#" style="color:white;">Save</a></button>
+                                <button class="btn btn-primary" type="submit" name="save">Save</button>
                                 <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url();?>/courses" style="color:white;">Cancel</a></button>
                             </div>
                         </form>
