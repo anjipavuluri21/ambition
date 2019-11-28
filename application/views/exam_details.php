@@ -64,7 +64,7 @@
                                                 <th>Sr.No</th>
                                                 <th>Exam Name</th>
 <!--                                                <th>Course</th>-->
-                                                
+
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -73,10 +73,10 @@
                                                 <td>1</td>
                                                 <td>MPSC</td>
                                                 <!--<td>Rajya Seva</td>-->
-                                                
+
                                                 <td><i class="fa fa-edit"</i>&nbsp;
                                                     <i class="fa fa-trash"></i></td>
-                                                
+
                                             </tr>
                                     </table>
                                 </div>

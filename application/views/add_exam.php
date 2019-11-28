@@ -31,17 +31,10 @@
                         <!-- <div class="card-header">
                           <h3 class="card-title">Quick Example</h3>
                         </div> -->
-                        <form method="post" action="">
+                        <form method="post" action="<?php echo base_url();?>exams/addExam">
 
                             <div class="card-body">
-<!--                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label for="exampleInputEmail1">Exam Name</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="text" name="course_name" class="form-control"  placeholder="Name">
-                                    </div>
-                                </div><br>-->
+
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="exampleInputEmail1">Exam</label>
@@ -50,9 +43,9 @@
                                         <input type="text" name="exam_name" class="form-control"  placeholder="Exam Name">
                                     </div>
                                 </div><br>
+                                <?php echo validation_errors(); ?>
 
-
-                                <button class="btn btn-primary" type="submit"><a href="#" style="color:white;">Save</a></button>
+                                <button class="btn btn-primary" type="submit" name="save"><a href="#" style="color:white;">Save</a></button>
                                 <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url(); ?>exams/examDetails" style="color:white;">Cancel</a></button>
                             </div>
                         </form>

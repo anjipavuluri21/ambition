@@ -40,6 +40,7 @@ class User_model extends CI_Model {
             'password' => md5($insert_data['password']),
             'state' => $insert_data['state'],
             'district' => $insert_data['district'],
+            'created_on' => date('d/m/y h:m:sa'),
         );
 //        print_r($user_list);exit;
         $result = $this->db->insert('users', $user_list);
@@ -50,12 +51,11 @@ class User_model extends CI_Model {
             $response['msg'] = "fail";
             
         }
-        return $response;
+        
     }
     public function display_user(){
         $query=$this->db->query('select * from users');
         return $query->result();
         
     }
-        
 }

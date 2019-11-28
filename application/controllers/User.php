@@ -4,6 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
 
+    public function __construct() {
+        parent::__construct();
+    }
+
     public function index() {
         $this->load->view('login');
     }
@@ -88,7 +92,7 @@ class User extends CI_Controller {
         $this->form_validation->set_rules('state', 'State');
         $this->form_validation->set_rules('district', 'District');
         $this->form_validation->set_rules('pin_Code', 'pin Code');
-//      
+
 //        print_r($insert_data);exit;
 
         if ($this->form_validation->run() == FALSE) {
@@ -97,10 +101,11 @@ class User extends CI_Controller {
             $this->load->model('User_model');
             $result = $this->User_model->register_user($insert_data);
             if ($result['msg'] == 'success') {
-                echo "sign up sucessfully";
+                $this->load->view('login');
             } else {
                 echo "something on went wrong";
             }
         }
     }
+
 }
