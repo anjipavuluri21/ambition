@@ -46,11 +46,12 @@ class User_model extends CI_Model {
         $result = $this->db->insert('users', $user_list);
 //        print_r($result);exit;
         if ($this->db->affected_rows() > 0) {
-            $response['msg'] = "success";
+            $response = "success";
         } else {
-            $response['msg'] = "fail";
+            $response = "fail";
             
         }
+        return $response;
         
     }
     public function display_user(){
