@@ -5,3 +5,8 @@
       <b>Version</b> 3.0.0
     </div>-->
   </footer>
+<script>
+    setTimeout(function() {
+        $("#custommsg").hide('blind', {}, 500)
+    }, 5000);
+</script>

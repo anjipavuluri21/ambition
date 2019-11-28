@@ -6,6 +6,7 @@ class Exams extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        $this->load->model('Exams_model');
     }
 
     public function index() {
@@ -17,23 +18,33 @@ class Exams extends CI_Controller {
     }
 
     public function addExam() {
-//        $this->load->view('add_exam');
-        $exam_name = $this->input->post('exam_name');
+        if (count($_POST)) {
+            $exam_name = $this->input->post('exam_name');
 
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('exam_name', 'Exam Name', 'required');
+            $this->load->library('form_validation');
+            $this->form_validation->set_rules('exam_name', 'Exam Name', 'required');
 
-        if ($this->form_validation->run() == FALSE) {
-            $this->load->view('add_exam');
-        } else {
-            $this->load->model('Exams_model');
-            $result = $this->Exams_model->Examadd($exam_name);
-//            print_r($result);exit;
-            if ($result['msg'] == 'success') {
-                echo "exam name inserted successfully";
+            if ($this->form_validation->run() == FALSE) {
+                $errorMsg['text'] = validation_errors();
+                $errorMsg['type'] = "danger";
+                $this->session->set_flashdata('msg', $errorMsg);
+                $this->load->view('add_exam');
             } else {
-                echo "failed to add exam name";
+
+                $result = $this->Exams_model->insertExam($exam_name);
+                if ($result == 'success') {
+                    $successMsg['text'] = "Exam Added Succesfully";
+                    $successMsg['type'] = "success";
+                    $this->session->set_flashdata('msg', $successMsg);
+                    $this->load->view('add_exam');
+                } else {
+                    $errorMsg['text'] = "Failed to exam contact admin";
+                    $errorMsg['type'] = "danger";
+                    $this->session->set_flashdata('msg', $errorMsg);
+                    $this->load->view('add_exam');
+                }
             }
+        } else {
             $this->load->view('add_exam');
         }
     }

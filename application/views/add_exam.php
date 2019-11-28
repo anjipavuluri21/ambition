@@ -4,6 +4,16 @@
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+    <?php if (!empty($_SESSION['msg'])) { ?>
+        <div class="box-body custommsg" >
+            <div class="alert alert-<?php echo $_SESSION['msg']['type']; ?>">
+                <h4> Alert!</h4>
+                <?php
+                print_r($_SESSION['msg']['text']);
+                ?>
+            </div>
+        </div>
+<?php } ?>
 
     <section class="content-header">
         <div class="container-fluid">
@@ -31,7 +41,7 @@
                         <!-- <div class="card-header">
                           <h3 class="card-title">Quick Example</h3>
                         </div> -->
-                        <form method="post" action="<?php echo base_url();?>exams/addExam">
+                        <form method="post" action="<?php echo base_url(); ?>exams/addExam">
 
                             <div class="card-body">
 
@@ -43,9 +53,8 @@
                                         <input type="text" name="exam_name" class="form-control"  placeholder="Exam Name">
                                     </div>
                                 </div><br>
-                                <?php echo validation_errors(); ?>
 
-                                <button class="btn btn-primary" type="submit" name="save"><a href="#" style="color:white;">Save</a></button>
+                                <button class="btn btn-primary" type="submit" name="save">Save</button>
                                 <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url(); ?>exams/examDetails" style="color:white;">Cancel</a></button>
                             </div>
                         </form>
