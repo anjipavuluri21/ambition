@@ -5,8 +5,9 @@
       <b>Version</b> 3.0.0
     </div>-->
   </footer>
+<script src="<?php echo base_url().'assets/js/';?>jquery-3.3.1.min.js"></script>
 <script>
     setTimeout(function() {
-        $("#custommsg").hide('blind', {}, 500)
+        $(".custommsg").hide()
     }, 5000);
 </script>
