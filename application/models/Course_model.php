@@ -27,10 +27,10 @@ class Course_model extends CI_Model {
     }
 
     public function courseList() {
-        $query = $this->db->query("SELECT exams.exam_name, courses.*
-        FROM exams
-        LEFT JOIN courses
-        ON exams.exam_id = courses . exam_id");
+        $query = $this->db->query("SELECT courses.*, exams.exam_name
+        FROM courses
+        LEFT JOIN exams
+        ON courses.exam_id = exams . exam_id");
         if ($query->num_rows() > 0) {
             return $query->result();
         }
