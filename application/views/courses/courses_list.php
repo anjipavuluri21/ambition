@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ambition | subject_list</title>
+        <title>Ambition | Courses</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,17 +29,27 @@
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
+                 <?php if (!empty($_SESSION['msg'])) { ?>
+                    <div class="box-body custommsg" >
+                        <div class="alert alert-<?php echo $_SESSION['msg']['type']; ?>">
+                            <h4> Alert!</h4>
+                            <?php
+                            print_r($_SESSION['msg']['text']);
+                            ?>
+                        </div>
+                    </div>
+                <?php } ?>
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1><?php echo $page_title; ?></h1>
+                                <h1>Courses</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active"><?php echo $page_title; ?></li>
+                                    <li class="breadcrumb-item active">Courses</li>
                                 </ol>
                             </div>
                         </div>
@@ -54,7 +64,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title"><?php echo $page_title; ?></h3>
+                                    <h3 class="card-title">Courses</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -72,30 +82,24 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>MPSC</td>
-                                                <td>Rajya Seva</td>
-                                                <td>2000 /-</td>
-                                                <td>12 Months</td>
-                                                <td text-align="center">
-                                                    <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
-                                                    <a href="#" title="View"><i class="fa fa-eye"></i> </a>&nbsp;
-                                                    <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
-                                                </td>
+                                            <?php 
+                                            $i=1;
+                                            foreach ($list as $row){
+                                                ?>
+                                             <tr>
+                                                <td><?php echo $i; ?></td>
+                                                <td><?php echo $row->exam_name; ?></td>
+                                                <td><?php echo $row->course_name; ?></td>
+                                                <td><?php echo $row->course_price; ?></td>
+                                                <td><?php echo $row->course_validity; ?></td>
+                                                <td><a href="#"><i class="fa fa-edit"></i></a>&nbsp;
+                                                    <a href="<?php echo base_url();?>courses/deleteCourse/<?php echo $row->course_id;?>" onclick="return confirm('Are you sure？')"><i class="fa fa-trash"></i></td>
                                             </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>MPSC</td>
-                                                <td>PSI/STI/Asst </td>
-                                                <td>3000 /-</td>
-                                                <td>12 Months</td>
-                                                <td text-align="center">
-                                                    <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
-                                                    <a href="#" title="View"><i class="fa fa-eye"></i> </a>&nbsp;
-                                                    <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
-                                                </td>
-                                            </tr>
+                                            <?php 
+                                            $i++;
+                                            }
+                                            ?>
+                                           
                                             
 
 

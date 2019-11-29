@@ -13,10 +13,10 @@ class Courses extends CI_Controller {
     }
 
     public function index() {
-        $content = [
-            'page_title' => "Courses",
-        ];
-        $this->load->view('courses/courses_list', $content);
+       $courses['list'] = $this->Course_model->courseList();
+        $this->load->view('courses/courses_list', $courses);    
+//        print_r($courses['list']);exit;
+        
     }
 
     public function addCourse() {
@@ -60,6 +60,21 @@ class Courses extends CI_Controller {
             ];
             $data['exams_list']=$this->Exams_model->examsList();
             $this->load->view('courses/add_courses', $data);
+        }
+    }
+     public function deleteCourse() {
+        $id = $this->uri->segment(3);
+        $result = $this->Course_model->delete_course($id);
+        if ($result == 'success') {
+            $successMsg['text'] = "Course Deleted Succesfully";
+            $successMsg['type'] = "success";
+            $this->session->set_flashdata('msg', $successMsg);
+            redirect(base_url('courses/courses_list'));
+        } else {
+            $errorMsg['text'] = "Failed to Delete Course contact admin";
+            $errorMsg['type'] = "danger";
+            $this->session->set_flashdata('msg', $errorMsg);
+            redirect(base_url('courses/courses_list'));
         }
     }
 
