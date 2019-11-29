@@ -12,10 +12,12 @@ class Category extends CI_Controller {
     }
 
     public function index() {
-        $content = [
-            'page_title' => "Category",
-        ];
-        $this->load->view('category/category_list', $content);
+//        $content = [
+//            'page_title' => "Category",
+//        ];
+//        $this->load->view('category/category_list', $content);
+        $category['list'] = $this->Category_model->categoryList();
+        $this->load->view('category/category_list', $category);
     }
 
     public function addCategory() {
@@ -59,6 +61,22 @@ class Category extends CI_Controller {
             $data['list'] = $this->Course_model->courseList();
 //            print_r($data['list']);exit;
             $this->load->view('category/add_Category', $data);
+        }
+    }
+
+    public function deleteCategory() {
+        $id = $this->uri->segment(3);
+        $result = $this->Category_model->delete_course_category($id);
+        if ($result == 'success') {
+            $successMsg['text'] = "Course Category Deleted Succesfully";
+            $successMsg['type'] = "success";
+            $this->session->set_flashdata('msg', $successMsg);
+            redirect(base_url('courses'));
+        } else {
+            $errorMsg['text'] = "Failed to Delete Course Category contact admin";
+            $errorMsg['type'] = "danger";
+            $this->session->set_flashdata('msg', $errorMsg);
+            redirect(base_url('courses/courses_list'));
         }
     }
 

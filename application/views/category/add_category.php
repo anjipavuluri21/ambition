@@ -62,8 +62,8 @@
                                     <div class="col-md-6">
                                         <select value="" class="form-control" name="course_id">
                                            <option>Select ExamName</option>
-                                            <?php 
-                                            foreach($list as $row){  ?>
+                                            <?php  
+                                           foreach($list as $row){  ?>
                                             <option value="<?php echo $row->course_id;?>"><?php echo $row->course_name;?></option>
                                             <?php 
                                             }
