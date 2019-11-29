@@ -12,22 +12,26 @@ class User extends CI_Controller {
     public function login() {
         $response = [];
 //        if (count($_POST)) {
-        $email = trim($this->input->post('email'));
+//        $email = trim($this->input->post('email'));
+           $mobile_no = trim($this->input->post('mobile_no')); 
         $password = trim($this->input->post('password'));
 
-        $this->form_validation->set_rules('email', 'Email', 'required');
+//        $this->form_validation->set_rules('email', 'Email', 'required');
+           $this->form_validation->set_rules('mobile_no','Mobile Numbere','required');
         $this->form_validation->set_rules('password', 'Password', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $response['status'] = "Fail";
             $response['message'] = validation_errors();
         } else {
-            $usercheck = $this->User_model->loginCheck($email, $password);
+            $usercheck = $this->User_model->loginCheck($mobile_no, $password);
+            
             if ($usercheck != false) {
                 $user = [
                     'user_id' => $usercheck[0]['user_id'],
                     'user_name' => $usercheck[0]['name'],
                     'user_email' => $usercheck[0]['email'],
+                    'user_mobile_no' => $usercheck[0]['mobile_no'],
                     'user_type' => $usercheck[0]['user_type'],
                 ];
                 $response['status'] = "Success";

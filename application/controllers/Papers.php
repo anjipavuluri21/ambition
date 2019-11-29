@@ -19,6 +19,7 @@ class Papers extends CI_Controller {
         ];
         $this->load->view('papers/add_papers',$content);
     }
+    
 
     
 

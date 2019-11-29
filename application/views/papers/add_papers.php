@@ -40,7 +40,7 @@
                                         <label for="exampleInputEmail1">Course Category</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <select class="form-control" name="subject_category_id">
+                                        <select class="form-control" name="course_category_id">
                                             <option value="1">Poorv</option>
                                             <option>Mukhya</option>
                                         </select>  
@@ -55,8 +55,6 @@
                                     </div>
                                 </div><br>
                                 
-
-
                                 <button class="btn btn-primary" type="submit"><a href="#" style="color:white;">Save</a></button>
                                 <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url();?>papers" style="color:white;">Cancel</a></button>
                             </div>

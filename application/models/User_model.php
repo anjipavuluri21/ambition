@@ -6,10 +6,11 @@ class User_model extends CI_Model {
         parent::__construct();
     }
 
-    public function loginCheck($email, $password) {
+    public function loginCheck($mobile_no, $password) {
 
         $conditon = array(
-            'email' => $email,
+//            'email' => $email,
+            'mobile_no' => $mobile_no,
             'password' => $password,
         );
         $query = $this->db->select('*')
