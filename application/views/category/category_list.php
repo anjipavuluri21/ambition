@@ -20,16 +20,7 @@
     </head>
     <body class="hold-transition sidebar-mini">
         <div class="wrapper">
-            <?php if (!empty($_SESSION['msg'])) { ?>
-                    <div class="box-body custommsg" >
-                        <div class="alert alert-<?php echo $_SESSION['msg']['type']; ?>">
-                            <h4> Alert!</h4>
-                            <?php
-                            print_r($_SESSION['msg']['text']);
-                            ?>
-                        </div>
-                    </div>
-                <?php } ?>
+           
             <!-- Navbar -->
             <?php $this->load->view('common/navbar'); ?>
             <!-- /.navbar -->
@@ -39,6 +30,16 @@
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
+                 <?php if (!empty($_SESSION['msg'])) { ?>
+                    <div class="box-body custommsg" >
+                        <div class="alert alert-<?php echo $_SESSION['msg']['type']; ?>">
+                            <h4> Alert!</h4>
+                            <?php
+                            print_r($_SESSION['msg']['text']);
+                            ?>
+                        </div>
+                    </div>
+                <?php } ?>
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <div class="container-fluid">

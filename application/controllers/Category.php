@@ -38,7 +38,7 @@ class Category extends CI_Controller {
             } else {
 
                 $result = $this->Category_model->insertCourseCategory($insert_data);
-                print_r($result);exit;
+//                print_r($result);exit;
                 if ($result == 'success') {
                     $successMsg['text'] = "Course category Added Succesfully";
                     $successMsg['type'] = "success";
@@ -48,7 +48,7 @@ class Category extends CI_Controller {
                     $errorMsg['text'] = "Failed to Add Course Category contact admin";
                     $errorMsg['type'] = "danger";
                     $this->session->set_flashdata('msg', $errorMsg);
-                    $this->load->view('courses/add_courses');
+                    $this->load->view('category/add_Category');
                 }
             }
         } else {
