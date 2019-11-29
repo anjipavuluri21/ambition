@@ -21,6 +21,5 @@ class Papers extends CI_Controller {
     }
     
 
-    
 
 }
