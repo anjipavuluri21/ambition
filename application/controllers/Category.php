@@ -71,12 +71,55 @@ class Category extends CI_Controller {
             $successMsg['text'] = "Course Category Deleted Succesfully";
             $successMsg['type'] = "success";
             $this->session->set_flashdata('msg', $successMsg);
-            redirect(base_url('courses'));
+            redirect(base_url('category'));
         } else {
             $errorMsg['text'] = "Failed to Delete Course Category contact admin";
             $errorMsg['type'] = "danger";
             $this->session->set_flashdata('msg', $errorMsg);
-            redirect(base_url('courses/courses_list'));
+            redirect(base_url('category'));
+        }
+    }
+
+    public function updateCategory() {
+        if (count($_POST)) {
+            $update_category = [];
+            $update_category['course_id'] = $this->input->post('course_id');
+            $update_category['course_category'] = $this->input->post('course_category');
+            $update_category['course_category_id'] = $this->uri->segment(3);
+
+            $this->load->library('form_validation');
+            $this->form_validation->set_rules('course_id', 'Course id', 'required');
+            $this->form_validation->set_rules('course_category', 'Course Category', 'required');
+
+            if ($this->form_validation->run() == FALSE) {
+                $errorMsg['text'] = validation_errors();
+                $errorMsg['type'] = "danger";
+                $this->session->set_flashdata('msg', $errorMsg);
+                $this->load->view('category/edit_category');
+            } else {
+                $result = $this->Category_model->updateCategory($update_category);
+//                print_r($result);exit;     
+                if ($result == 'success') {
+                    $successMsg['text'] = "Course Category updated Succesfully";
+                    $successMsg['type'] = "success";
+                    $this->session->set_flashdata('msg', $successMsg);
+                    redirect(base_url('category'));
+//                    
+                } else {
+                    $errorMsg['text'] = "Failed to update Course Category contact admin";
+                    $errorMsg['type'] = "danger";
+                    $this->session->set_flashdata('msg', $errorMsg);
+                    $this->load->view('category/edit_category');
+                }
+            }
+        }else{
+            $course_category_id=$this->uri->segment(3);
+            $data['category_data']=$this->Category_model->editCourseCategory($course_category_id);
+//            print_r($data['category_data']);exit;
+            $data['course'] = $this->Course_model->courseList();
+//            print_r($data['course']);exit;
+            $this->load->view('category/edit_category',$data);
+            
         }
     }
 

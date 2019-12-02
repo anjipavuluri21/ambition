@@ -90,8 +90,8 @@
                                                     <td><?php echo $i; ?></td>
                                                     <td><?php echo $row->course_name; ?></td>
                                                     <td><?php echo $row->course_category_name; ?></td>
-                                                    <td><a href="#"><i class="fa fa-edit"></i></a>&nbsp;
-                                                    <a href="<?php echo base_url();?>Category/deleteCategory/<?php echo $row->course_category_id;?>" onclick="return confirm('Are you sure？')"><i class="fa fa-trash"></i></td>
+                                                    <td><a href="<?php echo base_url();?>Category/updateCategory/<?php echo $row->course_category_id; ?>"><i class="fa fa-edit"></i></a>&nbsp;
+                                                    <a href="<?php echo base_url();?>Category/deleteCategory/<?php echo $row->course_category_id; ?>" onclick="return confirm('Are you sure？')"><i class="fa fa-trash"></i></td>
                                                 </tr>
                                                 <?php
                                                 $i++;

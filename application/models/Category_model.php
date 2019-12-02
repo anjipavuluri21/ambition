@@ -32,7 +32,8 @@ class Category_model extends CI_Model {
             return $query->result();
         }
     }
-    public function delete_course_category($id){
+
+    public function delete_course_category($id) {
         $sql = "DELETE FROM course_category where course_category_id=" . $id;
         $this->db->query($sql);
         if ($this->db->affected_rows() > 0) {
@@ -42,4 +43,30 @@ class Category_model extends CI_Model {
         }
         return $response;
     }
+      public function editCourseCategory($course_category_id) {
+        $query = $this->db->select('*')
+                ->from('course_category')
+                ->where('course_category_id', $course_category_id)
+                ->get();
+        return $query->row();
+    }
+    public function updateCategory($update_category) {
+        $category_data = array(
+            'course_category_id' => $update_category['course_category_id'],
+            'course_category_name' => $update_category['course_category'],
+            'updated_at' => date('y-m-d h:i:s'),
+            'updated_by' => $this->session->userdata['user_data']['user_id'],
+        );
+        
+        $this->db->where('course_category_id', $update_data['course_category_id']);
+        $this->db->update('course_category', $category_data);
+        
+        if ($this->db->affected_rows() > 0) {
+            $response = "success";
+        } else {
+            $response = "fail";
+        }
+        return $response;
+    }
+
 }

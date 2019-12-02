@@ -106,7 +106,7 @@ class Courses extends CI_Controller {
                     $successMsg['type'] = "success";
                     $this->session->set_flashdata('msg', $successMsg);
                     redirect(base_url('courses'));
-//                    s
+//                    
                 } else {
                     $errorMsg['text'] = "Failed to update Course contact admin";
                     $errorMsg['type'] = "danger";
