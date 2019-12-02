@@ -51,7 +51,7 @@
                                     <div class="col-md-6">
                                         <select value="" class="form-control" name="exam_id" >
                                             <?php foreach($exam_list as $exam){ ?>
-                                                <option value='<?= $exam->exam_id;?>'><?= $exam->exam_name;?></option>
+                                            <option value='<?= $exam->exam_id;?>'><?= $exam->exam_name;?></option>
                                             <?php }?>
                                             
                                         </select>  

@@ -4,28 +4,28 @@
 
 <div class="content-wrapper">
     <?php if (!empty($_SESSION['msg'])) { ?>
-                    <div class="box-body custommsg" >
-                        <div class="alert alert-<?php echo $_SESSION['msg']['type']; ?>">
-                            <h4> Alert!</h4>
-                            <?php
-                            print_r($_SESSION['msg']['text']);
-                            ?>
-                        </div>
-                    </div>
-                <?php } ?>
+        <div class="box-body custommsg" >
+            <div class="alert alert-<?php echo $_SESSION['msg']['type']; ?>">
+                <h4> Alert!</h4>
+                <?php
+                print_r($_SESSION['msg']['text']);
+                ?>
+            </div>
+        </div>
+    <?php } ?>
     <!-- Content Header (Page header) -->
 
     <section class="content-header">
-         <?php if (!empty($_SESSION['msg'])) { ?>
-                    <div class="box-body custommsg" >
-                        <div class="alert alert-<?php echo $_SESSION['msg']['type']; ?>">
-                            <h4> Alert!</h4>
-                            <?php
-                            print_r($_SESSION['msg']['text']);
-                            ?>
-                        </div>
-                    </div>
-                <?php } ?>
+        <?php if (!empty($_SESSION['msg'])) { ?>
+            <div class="box-body custommsg" >
+                <div class="alert alert-<?php echo $_SESSION['msg']['type']; ?>">
+                    <h4> Alert!</h4>
+                    <?php
+                    print_r($_SESSION['msg']['text']);
+                    ?>
+                </div>
+            </div>
+        <?php } ?>
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
@@ -51,8 +51,8 @@
                         <!-- <div class="card-header">
                           <h3 class="card-title">Quick Example</h3>
                         </div> -->
-                        <form method="post" action="<?php echo base_url();?>category/addCategory">
-                          
+                        <form method="post" action="<?php echo base_url(); ?>category/addCategory">
+
                             <div class="card-body">
 
                                 <div class="row">
@@ -61,10 +61,10 @@
                                     </div>
                                     <div class="col-md-6">
                                         <select value="" class="form-control" name="course_id">
-                                           <option>Select ExamName</option>
-                                           <?php foreach($course as $row){ ?>
-                                                <option value='<?php echo $row->course_id; ?>'><?php echo $row->course_name;?></option>
-                                            <?php }?>
+                                            <option>Select ExamName</option>
+                                            <?php foreach ($course as $row) { ?>
+                                                <option value='<?php echo $row->course_id; ?>'><?php echo $row->course_name; ?></option>
+                                            <?php } ?>
                                         </select>  
                                     </div>
                                 </div><br>
@@ -73,14 +73,14 @@
                                         <label for="exampleInputEmail1">Course Category</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="course_category" class="form-control"  placeholder="Course Category" value="<?php echo $category_data->course_category_name;?>">
+                                        <input type="text" name="course_category" class="form-control"  placeholder="Course Category" value="<?php echo $category_data->course_category_name; ?>">
                                     </div>
                                 </div><br>
-                                
+
 
 
                                 <button class="btn btn-primary" type="submit">Save</button>
-                                <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url();?>category" style="color:white;">Cancel</button>
+                                <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url(); ?>category" style="color:white;">Cancel</button>
                             </div>
                         </form>
 
