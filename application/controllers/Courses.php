@@ -100,13 +100,13 @@ class Courses extends CI_Controller {
             } else {
 
                 $result = $this->Course_model->updateCourse($update_data);
-                print_r($result);exit;
+//                print_r($result);exit;
                 if ($result == 'success') {
                     $successMsg['text'] = "Course updated Succesfully";
                     $successMsg['type'] = "success";
                     $this->session->set_flashdata('msg', $successMsg);
-                    redirect(base_url('courses/courses_lsit'));
-//                    
+                    redirect(base_url('courses'));
+//                    s
                 } else {
                     $errorMsg['text'] = "Failed to update Course contact admin";
                     $errorMsg['type'] = "danger";
