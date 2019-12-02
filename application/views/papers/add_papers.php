@@ -4,18 +4,18 @@
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-
+    <?php if (!empty($_SESSION['msg'])) { ?>
+        <div class="box-body custommsg" >
+            <div class="alert alert-<?php echo $_SESSION['msg']['type']; ?>">
+                <h4> Alert!</h4>
+                <?php
+                print_r($_SESSION['msg']['text']);
+                ?>
+            </div>
+        </div>
+    <?php } ?>
     <section class="content-header">
-        <?php if (!empty($_SESSION['msg'])) { ?>
-                    <div class="box-body custommsg" >
-                        <div class="alert alert-<?php echo $_SESSION['msg']['type']; ?>">
-                            <h4> Alert!</h4>
-                            <?php
-                            print_r($_SESSION['msg']['text']);
-                            ?>
-                        </div>
-                    </div>
-                <?php } ?>
+
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">

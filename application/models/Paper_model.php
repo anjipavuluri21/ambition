@@ -31,7 +31,10 @@ class Paper_model extends CI_Model {
             return $query->result();
         }
     }
-    
+     public function papersList() {
+        $query = $this->db->query('select * from course_papers');
+        return $query->result();
+    }
     public function delete_course_paper($id){
         $sql = "DELETE FROM course_papers where course_paper_id=" . $id;
         $this->db->query($sql);
