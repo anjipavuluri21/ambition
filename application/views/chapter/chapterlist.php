@@ -35,12 +35,12 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1><?php echo $page_title; ?></h1>
+                                <h1>Chapter</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active"><?php echo $page_title; ?></li>
+                                    <li class="breadcrumb-item active">Chapter</li>
                                 </ol>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title"><?php echo $page_title; ?></h3>
+                                    <h3 class="card-title">Chapters</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -71,26 +71,23 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php 
+                                            $i=1;
+                                            foreach ($list as $row){
+                                                ?>
                                             <tr>
-                                                <td>1</td>
-                                                <td>ENGLISH</td>
-                                                <td>Chapter 1</td>
-                                                <td text-align="center">
-                                                    <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
-                                                    
-                                                    <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
-                                                </td>
+                                                <td><?php echo $i; ?></td>
+                                                <td><?php echo $row->subject_name; ?></td>
+                                                <td><?php echo $row->chapter_name; ?></td>
+                                               <td><a href="#"><i class="fa fa-edit"></i></a>&nbsp;
+                                                   <a href="<?php echo base_url();?>chapter/deleteChapters/<?php echo $row->chapter_id; ?>" onclick="return confirm('Are you sure？')"><i class="fa fa-trash"></i></td>
+                                                
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Marathi</td>
-                                                 <td>Chapter 2</td>
-                                                <td text-align="center">
-                                                    <a href="#" title="edit"><i class="fa fa-edit"></i> </a>&nbsp;
-                                                    
-                                                    <a href="#" title="hide"><i class="fa fa-ban"></i> </a>&nbsp;
-                                                </td>
-                                            </tr>
+                                            <?php 
+                                            $i++;
+                                            }
+                                            ?>
+                                            
 
 
                                     </table>
