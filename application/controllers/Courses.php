@@ -81,10 +81,11 @@ class Courses extends CI_Controller {
         if (count($_POST)) {
            $update_data = [];
            $update_data['exam_id'] = $this->input->post('exam_id');
-            $update_data['course_name'] = $this->input->post('course_names');
+            $update_data['course_name'] = $this->input->post('course_name');
             $update_data['course_price'] = $this->input->post('course_price');
             $update_data['course_validity'] = $this->input->post('course_validity');
-
+            $update_data['course_id'] = $this->uri->segment(3);
+            
             $this->load->library('form_validation');
             $this->form_validation->set_rules('exam_id', 'Exam id', 'required');
             $this->form_validation->set_rules('course_name', 'Course Name', 'required');

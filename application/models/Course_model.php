@@ -64,7 +64,7 @@ class Course_model extends CI_Model {
             'updated_at' => date('y-m-d h:i:s'),
             'updated_by' => $this->session->userdata['user_data']['user_id'],
         );
-        $this->db->where('course_id', $course_id);
+        $this->db->where('course_id', $update_data['course_id']);
         $this->db->update('courses', $course_update);
 
         if ($this->db->affected_rows() > 0) {
