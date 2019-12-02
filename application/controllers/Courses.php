@@ -78,7 +78,48 @@ class Courses extends CI_Controller {
     }
 
     public function updateCourse() {
-        
-    }
+        if (count($_POST)) {
+           $update_data = [];
+           $update_data['exam_id'] = $this->input->post('exam_id');
+            $update_data['course_name'] = $this->input->post('course_names');
+            $update_data['course_price'] = $this->input->post('course_price');
+            $update_data['course_validity'] = $this->input->post('course_validity');
 
+            $this->load->library('form_validation');
+            $this->form_validation->set_rules('exam_id', 'Exam id', 'required');
+            $this->form_validation->set_rules('course_name', 'Course Name', 'required');
+            $this->form_validation->set_rules('course_price', 'Course Price', 'required');
+            $this->form_validation->set_rules('course_validity', 'Course Validity', 'required');
+
+            if ($this->form_validation->run() == FALSE) {
+                $errorMsg['text'] = validation_errors();
+                $errorMsg['type'] = "danger";
+                $this->session->set_flashdata('msg', $errorMsg);
+                $this->load->view('courses/edit_course');
+            } else {
+
+                $result = $this->Course_model->updateCourse($update_data);
+                print_r($result);exit;
+                if ($result == 'success') {
+                    $successMsg['text'] = "Course updated Succesfully";
+                    $successMsg['type'] = "success";
+                    $this->session->set_flashdata('msg', $successMsg);
+                    redirect(base_url('courses/courses_lsit'));
+//                    
+                } else {
+                    $errorMsg['text'] = "Failed to update Course contact admin";
+                    $errorMsg['type'] = "danger";
+                    $this->session->set_flashdata('msg', $errorMsg);
+                    $this->load->view('courses/edit_course');
+                }
+            }
+        } else {
+            $course_id = $this->uri->segment(3);
+//            print_r($course_id);exit;
+            $data['course_data'] = $this->Course_model->editCourse($course_id);
+//            print_r($data['course_data']);exit;
+            $this->load->view('courses/edit_course', $data);
+        }
+        
+}
 }

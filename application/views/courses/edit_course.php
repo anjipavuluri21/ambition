@@ -40,7 +40,7 @@
                         <!-- <div class="card-header">
                           <h3 class="card-title">Quick Example</h3>
                         </div> -->
-                        <form method="post" action="<?php echo base_url();?>courses/addCourse">
+                        <form method="post" action="">
 
                             <div class="card-body">
 
@@ -51,13 +51,7 @@
                                     <div class="col-md-6">
                                         <select value="" class="form-control" name="exam_id" >
                                             <option>Select ExamName</option>
-                                            <?php 
-                                            foreach($exams_list as $row){  ?>
-                                            <option value="<?php echo $row->exam_id;?>"><?php echo $row->exam_name;?></option>
-                                            <?php 
-                                            }
-                                            ?>
-                                            
+                                           
                                         </select>  
                                     </div>
                                 </div><br>
@@ -66,7 +60,7 @@
                                         <label for="exampleInputEmail1">Course Name</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="course_name" class="form-control"  placeholder="Course Name">
+                                        <input type="text" name="course_name" class="form-control"  placeholder="Course Name" value="<?php echo $course_data->course_name; ?>">
                                     </div>
                                 </div><br>
                                 <div class="row">
@@ -74,7 +68,7 @@
                                         <label for="exampleInputEmail1">Course Price</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="course_price" class="form-control"  placeholder="Course Price">
+                                        <input type="text" name="course_price" class="form-control"  placeholder="Course Price" value="<?php echo $course_data->course_price; ?>">
                                     </div>
                                 </div><br>
                                  <div class="row">
@@ -82,13 +76,11 @@
                                         <label for="exampleInputEmail1">Course Validity </label>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="course_validity" class="form-control"  placeholder="Course validity in months">
+                                        <input type="text" name="course_validity" class="form-control"  placeholder="Course validity in months" value="<?php echo $course_data->course_validity; ?>">
                                     </div>
                                 </div><br>
                                 
-
-
-                                <button class="btn btn-primary" type="submit" name="save">Save</button>
+                                <button class="btn btn-primary" type="submit" name="update">Update</button>
                                 <button class="btn btn-primary" type="reset" ><a href="<?php echo base_url();?>courses" style="color:white;">Cancel</a></button>
                             </div>
                         </form>

@@ -92,7 +92,7 @@
                                                 <td><?php echo $row->course_name; ?></td>
                                                 <td><?php echo $row->course_price; ?></td>
                                                 <td><?php echo $row->course_validity; ?></td>
-                                                <td><a href="#"><i class="fa fa-edit"></i></a>&nbsp;
+                                                <td><a href="<?php echo base_url();?>courses/updateCourse/<?php echo $row->course_id;?>"><i class="fa fa-edit"></i></a>&nbsp;
                                                     <a href="<?php echo base_url();?>courses/deleteCourse/<?php echo $row->course_id;?>" onclick="return confirm('Are you sure？')"><i class="fa fa-trash"></i></td>
                                             </tr>
                                             <?php 
