@@ -61,50 +61,6 @@ class Courses extends CI_Controller {
         }
     }
 
-    public function updateCourse() {
-        if (count($_POST)) {
-            $exam_name = $this->input->post('exam_name');
-            $course_name = $this->input->post('course_name');
-            $course_price = $this->input->post('course_price');
-            $course_validity = $this->input->post('course_validity');
-            $exam_id = $this->input->post('exam_id');
-
-            $this->load->library('form_validation');
-            $this->form_validation->set_rules('exam_name', 'Exam Name', 'required');
-            $this->form_validation->set_rules('course_name', 'Course Name', 'required');
-            $this->form_validation->set_rules('course_price', 'Course Price', 'required');
-            $this->form_validation->set_rules('course_validity', 'Course Validity', 'required');
-
-            if ($this->form_validation->run() == FALSE) {
-                $errorMsg['text'] = validation_errors();
-                $errorMsg['type'] = "danger";
-                $this->session->set_flashdata('msg', $errorMsg);
-                $this->load->view('update_courses');
-            } else {
-
-                $result = $this->Course_model->updateCourse($exam_name, $exam_id);
-                if ($result == 'success') {
-                    $successMsg['text'] = "Exam updated Succesfully";
-                    $successMsg['type'] = "success";
-                    $this->session->set_flashdata('msg', $successMsg);
-                    redirect(base_url('exams/examDetails'));
-//                    $this->load->view('exam_details');
-                } else {
-                    $errorMsg['text'] = "Failed to update exam contact admin";
-                    $errorMsg['type'] = "danger";
-                    $this->session->set_flashdata('msg', $errorMsg);
-                    $this->load->view('edit_exams');
-                }
-            }
-        } else {
-            $exam_id = $this->uri->segment(3);
-//            print_r($exam_id);exit;
-            $data['exam_data'] = $this->Exams_model->getExamdata($exam_id);
-//            print_r($data['exams_data']);exit;
-            $this->load->view('edit_exams', $data);
-        }
-    }
-
     public function deleteCourse() {
         $id = $this->uri->segment(3);
         $result = $this->Course_model->delete_course($id);
@@ -119,6 +75,10 @@ class Courses extends CI_Controller {
             $this->session->set_flashdata('msg', $errorMsg);
             redirect(base_url('courses/courses_list'));
         }
+    }
+
+    public function updateCourse() {
+        
     }
 
 }
