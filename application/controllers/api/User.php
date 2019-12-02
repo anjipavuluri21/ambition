@@ -24,7 +24,7 @@ class User extends CI_Controller {
             $response['status'] = "Fail";
             $response['message'] = validation_errors();
         } else {
-            $usercheck = $this->User_model->loginCheck($mobile_no, $password);
+            $usercheck = $this->User_model->loginCheckforApi($mobile_no, $password);
             
             if ($usercheck != false) {
                 $user = [
