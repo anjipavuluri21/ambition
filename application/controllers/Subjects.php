@@ -6,16 +6,14 @@ class Subjects extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-         $this->load->model('Subjects_model');
+        $this->load->model('Subjects_model');
         $this->load->model('Paper_model');
         date_default_timezone_set("Asia/kolkata");
     }
 
     public function index() {
-        $content = [
-            'page_title' => "Subjects",
-        ];
-        $this->load->view('subjects/subjects_list', $content);
+        $subjects['list'] = $this->Subjects_model->subjectsList();
+        $this->load->view('subjects/subjects_list', $subjects);
     }
 
     public function addSubjects() {
@@ -34,7 +32,7 @@ class Subjects extends CI_Controller {
                 $this->load->view('subjects/add_subjects');
             } else {
 
-                $result = $this->Paper_model->insertCoursePaper($insert_data);
+                $result = $this->Subjects_model->insert_subjects($insert_data);
 //                print_r($result);exit;
                 if ($result == 'success') {
                     $successMsg['text'] = "Course Paper Added Succesfully";
@@ -53,9 +51,25 @@ class Subjects extends CI_Controller {
             $data['content'] = [
                 'page_title' => "Add Course Paper",
             ];
-            $data['list'] = $this->Paper_model->scoursePaperList();
+            $data['list'] = $this->Paper_model->coursePaperList();
 //            print_r($data['list']);exit;
             $this->load->view('subjects/add_subjects', $data);
+        }
+    }
+
+    public function deleteSubjects() {
+        $id = $this->uri->segment(3);
+        $result = $this->Subjects_model->delete_subjects($id);
+        if ($result == 'success') {
+            $successMsg['text'] = "Subjects Deleted Succesfully";
+            $successMsg['type'] = "success";
+            $this->session->set_flashdata('msg', $successMsg);
+            redirect(base_url('subjects'));
+        } else {
+            $errorMsg['text'] = "Failed to Delete Subjects contact admin";
+            $errorMsg['type'] = "danger";
+            $this->session->set_flashdata('msg', $errorMsg);
+            redirect(base_url('subjects/subjects_list'));
         }
     }
 
