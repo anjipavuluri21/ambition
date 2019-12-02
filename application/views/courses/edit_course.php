@@ -50,8 +50,10 @@
                                     </div>
                                     <div class="col-md-6">
                                         <select value="" class="form-control" name="exam_id" >
-                                            <option>Select ExamName</option>
-                                           
+                                            <?php foreach($exam_list as $exam){ ?>
+                                                <option><?= $exam->exam_name;?></option>
+                                            <?php }?>
+                                            
                                         </select>  
                                     </div>
                                 </div><br>

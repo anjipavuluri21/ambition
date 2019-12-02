@@ -117,7 +117,8 @@ class Courses extends CI_Controller {
             $course_id = $this->uri->segment(3);
 //            print_r($course_id);exit;
             $data['course_data'] = $this->Course_model->editCourse($course_id);
-//            print_r($data['course_data']);exit;
+            $data['exam_list'] = $this->Exams_model->examsList();
+//            print_r($data['exam_list']);exit;
             $this->load->view('courses/edit_course', $data);
         }
         
