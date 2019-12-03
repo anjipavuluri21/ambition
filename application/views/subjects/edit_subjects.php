@@ -52,8 +52,14 @@
                                     <div class="col-md-6">
                                         <select class="form-control" name="course_paper_id">
                                             <option>Select Course Paper</option>
-                                            <?php foreach ($papers_list as $row) { ?>
-                                                <option value='<?php echo $row->course_paper_id; ?>'><?php echo $row->course_paper_name; ?></option>
+                                            <?php foreach ($papers_list as $row) { 
+                                                $select="";
+                                                if($row->course_paper_id == $subjects_data->course_paper_id){
+                                                    $select="selected";
+                                                }
+                                                
+                                                ?>
+                                                <option value='<?php echo $row->course_paper_id; ?>' <?= $select; ?>><?php echo $row->course_paper_name; ?></option>
                                             <?php } ?>
                                         </select>  
                                     </div>
