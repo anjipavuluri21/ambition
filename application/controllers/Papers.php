@@ -16,7 +16,7 @@ class Papers extends CI_Controller {
 //            'page_title' => "Papers",
 //        ];
         $coursePaper['list'] = $this->Paper_model->coursePaperList();
-        $this->load->view('papers/papers_list',$coursePaper);
+        $this->load->view('papers/papers_list', $coursePaper);
     }
 
     public function addPaper() {
@@ -58,6 +58,7 @@ class Papers extends CI_Controller {
             $this->load->view('papers/add_papers', $data);
         }
     }
+
     public function deleteCoursePaper() {
         $id = $this->uri->segment(3);
         $result = $this->Paper_model->delete_course_paper($id);
@@ -71,6 +72,51 @@ class Papers extends CI_Controller {
             $errorMsg['type'] = "danger";
             $this->session->set_flashdata('msg', $errorMsg);
             redirect(base_url('courses/courses_list'));
+        }
+    }
+
+    public function updatePaper() {
+        if (count($_POST)) {
+            $updatepaper = [];
+            $updatepaper['course_category_id'] = $this->input->post('course_category_id');
+            $updatepaper['course_paper_name'] = $this->input->post('course_paper_name');
+            $updatepaper['course_id'] = $this->uri->segment(3);
+
+            $this->load->library('form_validation');
+            $this->form_validation->set_rules('course_category_id', 'Course Category id', 'required');
+            $this->form_validation->set_rules('course_paper_name', 'Course Paper Name', 'required');
+
+
+            if ($this->form_validation->run() == FALSE) {
+                $errorMsg['text'] = validation_errors();
+                $errorMsg['type'] = "danger";
+                $this->session->set_flashdata('msg', $errorMsg);
+                $this->load->view('papers/update_papers');
+            } else {
+
+                $result = $this->Paper_model->update_papers($updatepaper);
+//                print_r($result);exit;
+                if ($result == 'success') {
+                    $successMsg['text'] = "Course updated Succesfully";
+                    $successMsg['type'] = "success";
+                    $this->session->set_flashdata('msg', $successMsg);
+                    redirect(base_url('papers'));
+//                    
+                } else {
+                    $errorMsg['text'] = "Failed to update Course contact admin";
+                    $errorMsg['type'] = "danger";
+                    $this->session->set_flashdata('msg', $errorMsg);
+                    $this->load->view('papers/update_papers');
+                }
+            }
+        } else {
+            $paper_id = $this->uri->segment(3);
+//            print_r($course_id);exit;
+            $data['paper_data'] = $this->Paper_model->editPaper($paper_id);
+//            print_r($data['paper_data'] );exit;
+            $data['category_data'] = $this->Category_model->categoryList();
+//            print_r($data['category_data']);exit;
+            $this->load->view('papers/update_papers', $data);
         }
     }
 
