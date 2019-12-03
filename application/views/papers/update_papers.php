@@ -55,6 +55,7 @@
 
                                             <?php foreach ($category_data as $category) { ?>
                                                 <option value='<?= $category->course_category_id; ?>'><?= $category->course_category_name; ?></option>
+
                                             <?php } ?>
                                         </select>
 
@@ -66,6 +67,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <input type="text" name="course_paper_name" class="form-control"  placeholder="Course Paper" value="<?php echo $paper_data->course_paper_name; ?>">
+                                        <input type="hidden" name="course_paper_id" class="form-control"  placeholder="Course Category paper" value="<?php echo $paper_data->course_paper_id; ?>">
+
                                     </div>
                                 </div><br>
 

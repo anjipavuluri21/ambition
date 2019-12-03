@@ -80,7 +80,7 @@ class Papers extends CI_Controller {
             $updatepaper = [];
             $updatepaper['course_category_id'] = $this->input->post('course_category_id');
             $updatepaper['course_paper_name'] = $this->input->post('course_paper_name');
-            $updatepaper['course_id'] = $this->uri->segment(3);
+            $updatepaper['course_paper_id'] = $this->uri->segment(3);
 
             $this->load->library('form_validation');
             $this->form_validation->set_rules('course_category_id', 'Course Category id', 'required');
