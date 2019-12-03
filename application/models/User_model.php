@@ -89,13 +89,9 @@ class User_model extends CI_Model {
                 ->limit(1)
                 ->get();
 
-        $result = $query->row();
+        return $result = $query->row();
 
-        if (count($result) > 0) {
-            return $result;
-        } else {
-            return false;
-        }
+        
     }
 
 }
