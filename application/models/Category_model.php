@@ -62,7 +62,7 @@ class Category_model extends CI_Model {
 
         $this->db->where('course_category_id', $update_category['course_category_id']);
         $this->db->update('course_category', $category_data);
-
+//        echo $this->db->last_query();exit;
         if ($this->db->affected_rows() > 0) {
             $response = "success";
         } else {

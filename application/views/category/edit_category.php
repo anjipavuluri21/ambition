@@ -29,12 +29,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Add Category</h1>
+                    <h1><?= $content['page_title'];?></h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Add Category</li>
+                        <li class="breadcrumb-item active"><?= $content['page_title'];?></li>
                     </ol>
                 </div>
             </div>
@@ -59,11 +59,11 @@
                                     <div class="col-md-6">
                                         <label for="exampleInputEmail1">Course Name</label>
                                     </div>
-                                    <dsiv class="col-md-6">
+                                    <div class="col-md-6">
                                         <select value="" class="form-control" name="course_id">
                                             <option>Select Course Name</option>
                                             <?php foreach ($course as $row) { ?>
-                                                <option value='<?php echo $row->cosurse_id; ?>'><?php echo $row->course_name; ?></option>
+                                                <option value='<?php echo $row->course_id; ?>'><?php echo $row->course_name; ?></option>
                                             <?php } ?>
                                         </select>  
                                     </div>
@@ -74,6 +74,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <input type="text" name="course_category" class="form-control"  placeholder="Course Category" value="<?php echo $category_data->course_category_name; ?>">
+                                        <input type="hidden" name="course_category_id" class="form-control"  placeholder="Course Category" value="<?php echo $category_data->course_category_id; ?>">
                                     </div>
                                 </div><br>
 

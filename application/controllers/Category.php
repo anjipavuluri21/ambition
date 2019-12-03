@@ -85,7 +85,7 @@ class Category extends CI_Controller {
             $update_category = [];
             $update_category['course_id'] = $this->input->post('course_id');
             $update_category['course_category'] = $this->input->post('course_category');
-            $update_category['course_category_id'] = $this->uri->segment(3);
+            $update_category['course_category_id'] = $this->input->post('course_category_id');
 
             $this->load->library('form_validation');
             $this->form_validation->set_rules('course_id', 'Course id', 'required');
@@ -98,7 +98,6 @@ class Category extends CI_Controller {
                 $this->load->view('category/edit_category');
             } else {
                 $result = $this->Category_model->updateCategory($update_category);
-//                print_r($result);exit;     
                 if ($result == 'success') {
                     $successMsg['text'] = "Course Category updated Succesfully";
                     $successMsg['type'] = "success";
@@ -113,6 +112,9 @@ class Category extends CI_Controller {
                 }
             }
         }else{
+             $data['content'] = [
+                'page_title' => "Edit Category",
+            ];
             $course_category_id=$this->uri->segment(3);
             $data['category_data']=$this->Category_model->editCourseCategory($course_category_id);
 //            print_r($data['category_data']);exit;
