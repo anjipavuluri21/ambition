@@ -64,7 +64,7 @@ class Subjects extends CI_Controller {
             $successMsg['text'] = "Subjects Deleted Succesfully";
             $successMsg['type'] = "success";
             $this->session->set_flashdata('msg', $successMsg);
-            redirect(base_url('subjects'));
+            redirect(base_url('subjects/subjects_list'));
         } else {
             $errorMsg['text'] = "Failed to Delete Subjects contact admin";
             $errorMsg['type'] = "danger";
@@ -75,45 +75,45 @@ class Subjects extends CI_Controller {
 
     public function updatesubjects() {
         if (count($_POST)) {
-            $update_category = [];
-            $update_category['course_id'] = $this->input->post('course_id');
-            $update_category['course_category'] = $this->input->post('course_category');
-            $update_category['course_category_id'] = $this->input->post('course_category_id');
+            $update_subjects = [];
+            $update_subjects['course_paper_id'] = $this->input->post('course_paper_id');
+            $update_subjects['subject_name'] = $this->input->post('subject_name');
+            $update_subjects['subjects_id'] = $this->input->post('subjects_id');
 
             $this->load->library('form_validation');
-            $this->form_validation->set_rules('course_id', 'Course id', 'required');
-            $this->form_validation->set_rules('course_category', 'Course Category', 'required');
+            $this->form_validation->set_rules('course_paper_id', 'Course paper id', 'required');
+            $this->form_validation->set_rules('subject_name', 'Subject Name', 'required');
 
             if ($this->form_validation->run() == FALSE) {
                 $errorMsg['text'] = validation_errors();
                 $errorMsg['type'] = "danger";
                 $this->session->set_flashdata('msg', $errorMsg);
-                $this->load->view('category/edit_category');
+                $this->load->view('subjects/edit_subjects');
             } else {
-                $result = $this->Category_model->updateCategory($update_category);
+                $result = $this->Subjects_model->updateSubjects($update_subjects);
                 if ($result == 'success') {
-                    $successMsg['text'] = "Course Category updated Succesfully";
+                    $successMsg['text'] = "Subject updated Succesfully";
                     $successMsg['type'] = "success";
                     $this->session->set_flashdata('msg', $successMsg);
-                    redirect(base_url('category'));
+                    redirect(base_url('subjects'));
 //                    
                 } else {
-                    $errorMsg['text'] = "Failed to update Course Category contact admin";
+                    $errorMsg['text'] = "Failed to update Subjects contact admin";
                     $errorMsg['type'] = "danger";
                     $this->session->set_flashdata('msg', $errorMsg);
-                    $this->load->view('category/edit_category');
+                    $this->load->view('subjects/edit_subjects');
                 }
             }
         } else {
             $data['content'] = [
-                'page_title' => "Edit Category",
+                'page_title' => "Edit Subjects",
             ];
-            $course_category_id = $this->uri->segment(3);
-            $data['category_data'] = $this->Category_model->editCourseCategory($course_category_id);
+            $subjects_id = $this->uri->segment(3);
+            $data['subjects_data'] = $this->Subjects_model->editSubjects($subjects_id);
 //            print_r($data['category_data']);exit;
-            $data['course'] = $this->Course_model->courseList();
+            $data['subject'] = $this->Paper_model->coursePaperList();
 //            print_r($data['course']);exit;
-            $this->load->view('category/edit_category', $data);
+            $this->load->view('subjects/edit_subjects', $data);
         }
     }
 

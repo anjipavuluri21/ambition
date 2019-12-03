@@ -91,7 +91,7 @@
                                                 <td><?php echo $i;?></td>
                                                 <td><?php echo $row->course_paper_name?></td>
                                                 <td><?php echo $row->subject_name?></td>
-                                                <td><a href="#"><i class="fa fa-edit"></i></a>&nbsp;
+                                                <td><a href="<?php echo base_url();?>subjects/updatesubjects/<?php echo $row->subject_id;?>"><i class="fa fa-edit"></i></a>&nbsp;
                                                     <a href="<?php echo base_url();?>subjects/deleteSubjects/<?php echo $row->subject_id;?>" onclick="return confirm('Are you sure？')"><i class="fa fa-trash"></i></td>
 
                                             </tr>

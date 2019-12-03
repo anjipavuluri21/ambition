@@ -34,8 +34,8 @@ class Subjects_model extends CI_Model {
             return $query->result();
         }
     }
-    
-    public function delete_subjects($id){
+
+    public function delete_subjects($id) {
         $sql = "DELETE FROM subjects where subject_id=" . $id;
         $this->db->query($sql);
         if ($this->db->affected_rows() > 0) {
@@ -44,6 +44,23 @@ class Subjects_model extends CI_Model {
             $response = "fail";
         }
         return $response;
+    }
+    public function editSubjects($subjects_id) {
+        $query = $this->db->select('*')
+                ->from('subjects')
+                ->where('subject_id', $subjects_id)
+                ->get();
+        return $query->row();
+    }
+    public function updateSubjects($update_subjects) {
+        $subjects_list = array(
+            'course_paper_id' => $update_subjects['course_paper_id'],
+            'subject_name' => $update_subjects['subject_name'],
+            'created_at' => date('y-m-d h:i:s'),
+            'created_by' => $this->session->userdata['user_data']['user_id'],
+        );
+        $this->db->where('subject_id', $update_subjects['subjects_id']);
+        $this->db->update('subjects', $subjects_list);
     }
 
 }
