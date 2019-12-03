@@ -51,7 +51,7 @@
                         <!-- <div class="card-header">
                           <h3 class="card-title">Quick Example</h3>
                         </div> -->
-                        <form method="post" action="<?php echo base_url(); ?>category/addCategory">
+                        <form method="post" action="<?php echo base_url(); ?>category/updateCategory">
 
                             <div class="card-body">
 
@@ -59,11 +59,11 @@
                                     <div class="col-md-6">
                                         <label for="exampleInputEmail1">Course Name</label>
                                     </div>
-                                    <div class="col-md-6">
+                                    <dsiv class="col-md-6">
                                         <select value="" class="form-control" name="course_id">
-                                            <option>Select ExamName</option>
+                                            <option>Select Course Name</option>
                                             <?php foreach ($course as $row) { ?>
-                                                <option value='<?php echo $row->course_id; ?>'><?php echo $row->course_name; ?></option>
+                                                <option value='<?php echo $row->cosurse_id; ?>'><?php echo $row->course_name; ?></option>
                                             <?php } ?>
                                         </select>  
                                     </div>
