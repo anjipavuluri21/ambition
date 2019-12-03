@@ -15,7 +15,7 @@ class Exams extends CI_Controller {
 
     public function examDetails() {
         $result['data'] = $this->Exams_model->examsList();
-        $this->load->view('exam_details', $result);
+        $this->load->view('exams/exam_details', $result);
     }
 
     public function addExam() {
@@ -29,7 +29,7 @@ class Exams extends CI_Controller {
                 $errorMsg['text'] = validation_errors();
                 $errorMsg['type'] = "danger";
                 $this->session->set_flashdata('msg', $errorMsg);
-                $this->load->view('add_exam');
+                $this->load->view('exams/add_exam');
             } else {
 
                 $result = $this->Exams_model->insertExam($exam_name);
@@ -37,16 +37,16 @@ class Exams extends CI_Controller {
                     $successMsg['text'] = "Exam Added Succesfully";
                     $successMsg['type'] = "success";
                     $this->session->set_flashdata('msg', $successMsg);
-                    $this->load->view('add_exam');
+                    $this->load->view('exams/add_exam');
                 } else {
                     $errorMsg['text'] = "Failed to exam contact admin";
                     $errorMsg['type'] = "danger";
                     $this->session->set_flashdata('msg', $errorMsg);
-                    $this->load->view('add_exam');
+                    $this->load->view('exams/add_exam');
                 }
             }
         } else {
-            $this->load->view('add_exam');
+            $this->load->view('exams/add_exam');
         }
     }
 
@@ -66,7 +66,7 @@ class Exams extends CI_Controller {
                 $errorMsg['text'] = validation_errors();
                 $errorMsg['type'] = "danger";
                 $this->session->set_flashdata('msg', $errorMsg);
-                $this->load->view('edit_exams');
+                $this->load->view('exams/edit_exams');
             } else {
 
                 $result = $this->Exams_model->updateExam($exam_name, $exam_id);
@@ -80,7 +80,7 @@ class Exams extends CI_Controller {
                     $errorMsg['text'] = "Failed to update exam contact admin";
                     $errorMsg['type'] = "danger";
                     $this->session->set_flashdata('msg', $errorMsg);
-                    $this->load->view('edit_exams');
+                    $this->load->view('exams/edit_exams');
                 }
             }
         } else {
@@ -88,7 +88,7 @@ class Exams extends CI_Controller {
 //            print_r($exam_id);exit;
             $data['exam_data'] = $this->Exams_model->getExamdata($exam_id);
 //            print_r($data['exams_data']);exit;
-            $this->load->view('edit_exams', $data);
+            $this->load->view('exams/edit_exams', $data);
         }
     }
 

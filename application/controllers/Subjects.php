@@ -73,4 +73,48 @@ class Subjects extends CI_Controller {
         }
     }
 
+    public function updatesubjects() {
+        if (count($_POST)) {
+            $update_category = [];
+            $update_category['course_id'] = $this->input->post('course_id');
+            $update_category['course_category'] = $this->input->post('course_category');
+            $update_category['course_category_id'] = $this->input->post('course_category_id');
+
+            $this->load->library('form_validation');
+            $this->form_validation->set_rules('course_id', 'Course id', 'required');
+            $this->form_validation->set_rules('course_category', 'Course Category', 'required');
+
+            if ($this->form_validation->run() == FALSE) {
+                $errorMsg['text'] = validation_errors();
+                $errorMsg['type'] = "danger";
+                $this->session->set_flashdata('msg', $errorMsg);
+                $this->load->view('category/edit_category');
+            } else {
+                $result = $this->Category_model->updateCategory($update_category);
+                if ($result == 'success') {
+                    $successMsg['text'] = "Course Category updated Succesfully";
+                    $successMsg['type'] = "success";
+                    $this->session->set_flashdata('msg', $successMsg);
+                    redirect(base_url('category'));
+//                    
+                } else {
+                    $errorMsg['text'] = "Failed to update Course Category contact admin";
+                    $errorMsg['type'] = "danger";
+                    $this->session->set_flashdata('msg', $errorMsg);
+                    $this->load->view('category/edit_category');
+                }
+            }
+        } else {
+            $data['content'] = [
+                'page_title' => "Edit Category",
+            ];
+            $course_category_id = $this->uri->segment(3);
+            $data['category_data'] = $this->Category_model->editCourseCategory($course_category_id);
+//            print_r($data['category_data']);exit;
+            $data['course'] = $this->Course_model->courseList();
+//            print_r($data['course']);exit;
+            $this->load->view('category/edit_category', $data);
+        }
+    }
+
 }
