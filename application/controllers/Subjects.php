@@ -64,12 +64,12 @@ class Subjects extends CI_Controller {
             $successMsg['text'] = "Subjects Deleted Succesfully";
             $successMsg['type'] = "success";
             $this->session->set_flashdata('msg', $successMsg);
-            redirect(base_url('subjects/subjects_list'));
+            redirect(base_url('subjects'));
         } else {
             $errorMsg['text'] = "Failed to Delete Subjects contact admin";
             $errorMsg['type'] = "danger";
             $this->session->set_flashdata('msg', $errorMsg);
-            redirect(base_url('subjects/subjects_list'));
+            redirect(base_url('subjects'));
         }
     }
 
@@ -111,7 +111,7 @@ class Subjects extends CI_Controller {
             $subjects_id = $this->uri->segment(3);
             $data['subjects_data'] = $this->Subjects_model->editSubjects($subjects_id);
 //            print_r($data['category_data']);exit;
-            $data['subject'] = $this->Paper_model->coursePaperList();
+            $data['papers_list'] = $this->Paper_model->coursePaperList();
 //            print_r($data['course']);exit;
             $this->load->view('subjects/edit_subjects', $data);
         }

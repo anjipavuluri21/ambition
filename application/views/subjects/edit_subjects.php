@@ -52,7 +52,7 @@
                                     <div class="col-md-6">
                                         <select class="form-control" name="course_paper_id">
                                             <option>Select Course Paper</option>
-                                            <?php foreach ($subject as $row) { ?>
+                                            <?php foreach ($papers_list as $row) { ?>
                                                 <option value='<?php echo $row->course_paper_id; ?>'><?php echo $row->course_paper_name; ?></option>
                                             <?php } ?>
                                         </select>  

@@ -85,6 +85,9 @@
                                         <tbody>
                                            <?php 
                                            $i=1;
+                                           if(!empty($list)){
+                                               
+                                         
                                            foreach ($list as $row){
                                                ?>
                                             <tr>
@@ -98,6 +101,7 @@
                                            <?php
                                            $i++;
                                            }
+                                             }
                                            ?>
                                     </table>
                                 </div>

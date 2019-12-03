@@ -53,14 +53,20 @@ class Subjects_model extends CI_Model {
         return $query->row();
     }
     public function updateSubjects($update_subjects) {
-        $subjects_list = array(
+        $update = array(
             'course_paper_id' => $update_subjects['course_paper_id'],
             'subject_name' => $update_subjects['subject_name'],
-            'created_at' => date('y-m-d h:i:s'),
-            'created_by' => $this->session->userdata['user_data']['user_id'],
+            'updated_at' => date('y-m-d h:i:s'),
+            'updated_by' => $this->session->userdata['user_data']['user_id'],
         );
         $this->db->where('subject_id', $update_subjects['subjects_id']);
-        $this->db->update('subjects', $subjects_list);
+        $this->db->update('subjects', $update);
+        if ($this->db->affected_rows() > 0) {
+            $response = "success";
+        } else {
+            $response = "fail";
+        }
+        return $response;
     }
 
 }
