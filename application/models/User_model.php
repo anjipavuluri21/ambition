@@ -29,6 +29,7 @@ class User_model extends CI_Model {
             return false;
         }
     }
+
     public function loginCheck($email, $password) {
 
         $conditon = array(
@@ -72,14 +73,29 @@ class User_model extends CI_Model {
             $response = "success";
         } else {
             $response = "fail";
-            
         }
         return $response;
-        
     }
-    public function display_user(){
-        $query=$this->db->query('select * from users');
+
+    public function display_user() {
+        $query = $this->db->query('select * from users');
         return $query->result();
-        
     }
+
+    public function getUserInfo($userId) {
+        $query = $this->db->select('*')
+                ->from('users')
+                ->where('user_id',$userId)
+                ->limit(1)
+                ->get();
+
+        $result = $query->row();
+
+        if (count($result) > 0) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
 }

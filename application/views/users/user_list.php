@@ -21,11 +21,11 @@
     <body class="hold-transition sidebar-mini">
         <div class="wrapper">
             <!-- Navbar -->
-            <?php include('common/navbar.php') ?>
+            <?php $this->load->view('common/navbar'); ?>
             <!-- /.navbar -->
 
             <!-- Main Sidebar Container -->
-            <?php include('common/sidebar.php'); ?>
+            <?php $this->load->view('common/sidebar'); ?>
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
@@ -67,25 +67,27 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php 
-                                            $i=1;
-                                            foreach ($data as $row){
+                                            <?php
+                                            $i = 1;
+                                            foreach ($data as $row) {
                                                 ?>
-                                            <tr>
-                                                <td><?php echo $i;?></td>
-                                                <td><?php echo $row->name;?></td>
-                                                <td><?php echo $row->email;?></td>
-                                                <td><?php echo $row->password;?></td>
-                                                <td text-align="center">
-                                                    <button type="button"  data-toggle="modal" data-target="#myModal">View</button>
+                                                <tr>
+                                                    <td><?php echo $i; ?></td>
+                                                    <td><?php echo $row->name; ?></td>
+                                                    <td><?php echo $row->email; ?></td>
+                                                    <td><?php echo $row->password; ?></td>
+                                                    <td text-align="center">
+                                                        <a href="javascript:void(0);" data-href="<?php echo base_url() . 'user/userinfo/' . $row->user_id; ?>" class="openPopup">View</a>
+                                                       
+                                                    </td>
+                                                </tr>
 
-                                                </td>
-                                            </tr>
-                                            <?php 
-                                            $i++;
+
+                                                <?php
+                                                $i++;
                                             }
                                             ?>
-                                            
+
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
@@ -98,36 +100,29 @@
                 </section>
                 <!-- /.content -->
             </div>
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"></button>
-
-                        </div>
-                        <div class="modal-body">
-
-                            <p><b>First Name:</b> anji</p>
-                            <p><b>Last Name:</b> pavuluri</p>
-                            <p><b>Email:</b> anji@gmail.com</p>
-                            <p><b>Mobile Number:</b> 9876543210</p>
-                            <p><b>Password:</b> 123456</p>
-                            <p><b>State:</b> maharashtra</p>
-                            <p><b>District:</b> Akola</p>
-                            <p><b>Pin Code:</b> 444001</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" classs="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-
-                </div>
+          <!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">User Info</h4>
             </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+      
+    </div>
+</div>
 
             <!-- /.content-wrapper -->
-            <?php include('common/footer.php') ?>
+            <?php $this->load->view('common/footer'); ?>
 
 
             <!-- Control Sidebar -->
@@ -160,6 +155,14 @@
                     "ordering": true,
                     "info": true,
                     "autoWidth": false,
+                });
+            });
+            $(document).ready(function () {
+                $('.openPopup').on('click', function () {
+                    var dataURL = $(this).attr('data-href');
+                    $('.modal-body').load(dataURL, function () {
+                        $('#myModal').modal({show: true});
+                    });
                 });
             });
         </script>

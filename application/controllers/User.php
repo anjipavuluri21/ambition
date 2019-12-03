@@ -6,6 +6,7 @@ class User extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        $this->load->model('User_model');
     }
 
     public function index() {
@@ -17,9 +18,21 @@ class User extends CI_Controller {
     }
 
     public function user_list() {
-        $this->load->model('User_model');
         $result['data'] = $this->User_model->display_user();
-        $this->load->view('user_list', $result);
+        $this->load->view('users/user_list', $result);
+    }
+
+    public function userinfo($userId) {
+        $user_data = $this->User_model->getUserInfo($userId);
+        
+        echo "<p><b>First Name:</b> ".$user_data->name."</p>";
+        echo "<p><b>Email:</b> ".$user_data->email."</p>";
+        echo "<p><b>Mobile Number:</b> ".$user_data->mobile_no."</p>";
+        echo "<p><b>Password:</b> ".$user_data->password."</p>";
+        echo "<p><b>State:</b> ".$user_data->state."</p>";
+        echo "<p><b>District:</b> ".$user_data->district."</p>";
+        echo "<p><b>Pin Code:</b> ".$user_data->pin_code."</p>";
+        
     }
 
     public function login() {
